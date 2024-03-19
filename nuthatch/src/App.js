@@ -1,9 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
+import AuthDetails from './components/AuthDetails';
 
 function App() {
   return (
     <div className="App">
+      <SignIn />
+      <SignUp />
+      <AuthDetails />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,6 +24,7 @@ function App() {
           Learn React
         </a>
       </header>
+      
     </div>
   );
 }
