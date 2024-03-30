@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .header{
     min-height: 100vh;
@@ -14,6 +15,7 @@
 nav{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
+    min-height: 70px;
     font-style: normal;
     display: flex;
     padding: 2% 6%;
@@ -25,7 +27,7 @@ nav{
 .nav-links{
     font-family: "Old Standard TT", serif;
     font-weight: 400;
-     font-style: normal;
+    font-style: normal;
     flex: 1;
     text-align: right;
 }
@@ -52,6 +54,52 @@ nav{
 .nav-links ul li:hover::after{
     width: 100%;
 }
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #7ed957;
+}
+
+/*https://www.youtube.com/watch?v=flItyHiDm7E&ab_channel=WebDevTutorials*/
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity:0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px)rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px)rotate(-45deg);
+    }
+    .nav-menu{
+        position:fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #00004d;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-menu.active{
+        left:0;
+    }
+}
+
 .container{
     display: flex;
     align-items: center;
