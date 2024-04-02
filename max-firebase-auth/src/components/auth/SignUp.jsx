@@ -2,7 +2,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from 'react';
 import { auth } from "../../firebase";
 
-const SignIn = () => {
+import email_icon from './Assets/email.png';
+import password_icon from './Assets/password.png';
+
+function SignUp(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -11,6 +14,7 @@ const SignIn = () => {
         createUserWithEmailAndPassword(auth,email, password)
         .then((userCredential) => {
             console.log(userCredential);
+            alert('Sign-up successful can now log in');
         })
         .catch((error) => {
             console.log(error);
@@ -19,25 +23,32 @@ const SignIn = () => {
         });
     }
     return (
-        <div className='sign-in-container'>
+        <div className='sign_container'>
             <form onSubmit={signUp}>
-                <h1>Create An Account</h1>
-                <input 
-                    type='email' 
-                    placeholder='Enter your email' 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)}
-                ></input>
-                <input 
-                    type='password' 
-                    placeholder='Enter your password' 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                            ></input>
-                            <button type="submit">Sign Up</button>
+                <div className='sign_header'>
+                    <div className='sign_text'>Sign Up</div>
+                    <div className='sign_underline'></div>
+                </div>
+                <div className='sign_inputs'>
+                    <div className="sign_input">
+                        <img src={email_icon} alt = ""/>
+                        <input type="email" placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}/>
+                    </div>  
+                    <div className="sign_input">
+                        <img src={password_icon} alt = ""/>
+                        <input type="password" placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}/>
+                    </div> 
+                </div>   
+                <div className='sign_forgot-password'>Lost Password? <span>Click here</span></div>
+                <div className='sign_submit-container'>
+                    <button type="submit" className="sign_submit">Sign Up</button>
+                </div> 
+                
             </form>
         </div>
     );
 };
 
-export default SignIn;
+export default SignUp;

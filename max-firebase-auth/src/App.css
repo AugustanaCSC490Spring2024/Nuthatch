@@ -1,38 +1,258 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background-color: #00004d;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  min-height: 70px;
+  font-style: normal;
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  color: #7ed957;
+  font-size: 24px;
+}
+.nav-links{
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.nav-links ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+.nav-links ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #7ed957;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+  width: 100%;
+}
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #7ed957;
+}
+
+/*https://www.youtube.com/watch?v=flItyHiDm7E&ab_channel=WebDevTutorials*/
+@media(max-width:768px){
+  .hamburger{
+      display: block;
+  }
+  .hamburger.active .bar:nth-child(2){
+      opacity:0;
+  }
+  .hamburger.active .bar:nth-child(1){
+      transform: translateY(8px)rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px)rotate(-45deg);
+  }
+  .nav-menu{
+      position:fixed;
+      left: -100%;
+      top: 70px;
+      gap: 0;
+      flex-direction: column;
+      background-color: #00004d;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+  }
+  .nav-menu.active{
+      left:0;
+  }
+}
+
+.container{
+  display: flex;
+  align-items: center;
+}
+.text-box{
+  flex: 1;
+  color:#fff;
+  text-align: left;
+  padding-left: 5%;
+  /*
+  padding: 20px;
+  width: 90%;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  */
+}
+.text-box h1{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 62px;
+}
+.text-box p{
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+   font-style: normal;
+  margin: 10px 0 40px;
+  font-size: 14px;
+  color:#fff;
+}
+
+.image{
+  flex: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+  max-width: 75%;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-button{
+  display: inline-block;
+  text-decoration: none;
+  color: #00004d;
+  border: 2px solid #fff;
+  padding: 12px 34px;
+  font-size: 16px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: #7ed957;
+  position: relative;
+  cursor: pointer;
+}
+.login-button:hover{
+  background-color: #fff;
+  transition: 0.7s;
+}
+.sign_container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 200px;
+  width: 600px;
+  background: #fff;
+  padding-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sign_header{
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.sign_text{
+  color: #3c009d;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.sign_underline{
+  width: 61px;
+  height: 6px;
+  background: #3c009d;
+  border-radius: 9px;
+}
+
+.sign_inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 55px;
+}
+
+.sign_input{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 480px;
+  height: 80px;
+  background: #eaeaea;
+  border-radius: 6px;
+}
+
+.sign_input img{
+  margin: 0px 30px;
+}
+
+.sign_input input{
+  height: 50px;
+  width: 400px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #797979;
+  font-size: 19px;
+}
+
+.sign_forgot-password{
+  padding-left: 20px;
+  margin-top: 27px;
+  color: #797979;
+  font-size: 18px;
+}
+
+.forgot-password span{
+  color: #4c00b4;
+  cursor: pointer;
+}
+
+.sign_submit-container{
+  display: flex;
+  gap: 3px;
+  margin: 20px auto;
+}
+
+.sign_submit{
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  width: 220px;
+  height: 59px;
+  background: #4c00b4;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 200px;
 }

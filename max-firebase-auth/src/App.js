@@ -1,8 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import SignIn from './components/auth/SignIn';
-import SignUp from './components/auth/SignUp';
+import SignIn from './components/auth/SignIn.jsx';
+import SignUp from './components/auth/SignUp.jsx';
 import AuthDetails from './components/AuthDetails';
+import Home from './pages/home.js';
+import Navbar from './components/Navbar.js';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
 // import {
 //     BrowserRouter as Router,
 //     Routes,
@@ -12,11 +17,18 @@ import AuthDetails from './components/AuthDetails';
 
 function App() {
   return (
+    <section class="header">
     <div className="App">
-      <SignIn />
-      <SignUp />
-      <AuthDetails />
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn /> } />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </Router>
     </div>
+    </section>
   );
 }
 

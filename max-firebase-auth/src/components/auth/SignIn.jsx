@@ -2,15 +2,20 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from 'react';
 import { auth } from "../../firebase";
 
-const SignIn = () => {
+import email_icon from './Assets/email.png';
+import password_icon from './Assets/password.png';
+
+function SignIn(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    
 
     const signIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth,email, password)
         .then((userCredential) => {
             console.log(userCredential);
+            alert('Sign-in successful');
         })
         
         .catch((error) => {
@@ -20,23 +25,28 @@ const SignIn = () => {
         });
     }
     return (
-        <div className='sign-in-container'>
+        <div className='sign_container'>
             <form onSubmit={signIn}>
-                <h1>Sign In</h1>
-                <input 
-                    type='email' 
-                    placeholder='Enter your email' 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)}
-                ></input>
-                <input 
-                    type='password' 
-                    placeholder='Enter your password' 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                            ></input>
-                
-                            <button type="submit">Log In</button>
+                <div className='sign_header'>
+                    <div className='sign_text'>Sign In</div>
+                    <div className='sign_underline'></div>
+                </div>
+                <div className='sign_inputs'>
+                    <div className="sign_input">
+                        <img src={email_icon} alt = ""/>
+                        <input type="email" placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}/>
+                    </div>  
+                    <div className="sign_input">
+                        <img src={password_icon} alt = ""/>
+                        <input type="password" placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}/>
+                    </div> 
+                </div>   
+                <div className='sign_forgot-password'>Lost Password? <span>Click here</span></div>
+                <div className='sign_submit-container'>
+                    <button type="submit" className="sign_submit">Log In</button>
+                </div> 
                 
             </form>
         </div>
