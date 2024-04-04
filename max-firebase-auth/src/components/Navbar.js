@@ -9,20 +9,20 @@ function Navbar() {
             <div class="nav-links">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                      <NavLink to="/">Home</NavLink>
+                      <NavLink to="/">HOME</NavLink>
                     </li>
                     <li class="nav-item">
-                      <NavLink to="/about">About</NavLink>
+                      <NavLink to="/about">ABOUT</NavLink>
                     </li>
                     <li class="nav-item">
-                      <NavLink to="/contact">Contact</NavLink>
+                      <NavLink to="/contact">CONTACT</NavLink>
                     </li>
                     <li class="nav-item">
-                      <NavLink to="/account">Account</NavLink>
+                      <NavLink to="/account">ACCOUNT</NavLink>
                     </li>
                 </ul>
             </div>
-                <div class = "hamburger">
+                <div className = "hamburger">
                     <span class ='bar'> </span>
                     <span class ='bar'> </span>
                     <span class ='bar'> </span>

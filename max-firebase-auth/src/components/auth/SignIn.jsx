@@ -28,7 +28,7 @@ function SignIn(){
         <div className='sign_container'>
             <form onSubmit={signIn}>
                 <div className='sign_header'>
-                    <div className='sign_text'>Sign In</div>
+                    <div className='sign_text'>Log In</div>
                     <div className='sign_underline'></div>
                 </div>
                 <div className='sign_inputs'>
