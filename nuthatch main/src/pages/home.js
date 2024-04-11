@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import gymnast from './0.png'
+
 function Home(){
     return (
         
@@ -18,6 +19,7 @@ function Home(){
             <div class="image">
                 <img src={gymnast} alt="gymnastics logo"></img>
             </div>
+
         </div>
     );
 };
