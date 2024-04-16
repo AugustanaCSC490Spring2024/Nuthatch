@@ -13,6 +13,31 @@ import { usePapaParse } from 'react-papaparse';
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
 
 
+function create_cards(data){
+  const display = document.getElementById("display");
+  for(let i = 0; i < data.length; i++){
+    let card = document.createElement("div");
+    card.className = "event-card";
+    let cardImg =  ''
+    let cardData = ''
+      for (const key in data[i]) {
+        if (key === "CODE" && data[i][key] === '') return;
+        if (key === "Image") {
+            cardImg += `<img src="${data[i][key]}" alt="Photo of gymnastics event called ${data[i]["Title"]}">`;
+            cardImg += '<button type="button">Add to lesson</button>';
+        }
+        if (typeof data[i][key] === "string") {
+            var keywordArray = data[i][key].split(',');
+            for (let k = 0; k < keywordArray.length; k++) {
+                cardData += keywordArray[k];
+            }
+        }
+    }
+    card.innerHTML = cardImg;
+    display.appendChild(card);
+  }
+}
+
 function App() {
   const [csvData, setCSVData] = useState("no data yet");
 
@@ -29,10 +54,10 @@ function App() {
                       complete: (results) => {
                         console.log("Parsing complete:", results);
                         setCSVData(results.data);
+                        create_cards(csvData);
                       }
                   });
     }
-
     fetchData();
   }, []);
   
@@ -51,6 +76,9 @@ function App() {
         </Routes>
       </Router>
       {/* <div>{JSON.stringify(csvData)}</div> */}
+      <div id="display" class="event-container">
+        
+    </div>
     </div>
     </section>
   );
