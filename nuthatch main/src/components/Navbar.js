@@ -12,6 +12,9 @@ function Navbar() {
                       <NavLink to="/">HOME</NavLink>
                     </li>
                     <li class="nav-item">
+                      <NavLink to="/search">SEARCH</NavLink>
+                    </li>
+                    <li class="nav-item">
                       <NavLink to="/about">ABOUT</NavLink>
                     </li>
                     <li class="nav-item">
@@ -20,6 +23,7 @@ function Navbar() {
                     <li class="nav-item">
                       <NavLink to="/account">ACCOUNT</NavLink>
                     </li>
+                    
                 </ul>
             </div>
                 <div className = "hamburger">
