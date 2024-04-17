@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
+// import "../styles/search.css";
 import { useState, useEffect } from 'react';
-import { update } from "firebase/database";
-
+import DrillCardView from '../components/DrillCardView';
 
 const Search = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -33,12 +33,17 @@ const Search = (props) => {
         onChange={handleInputChange}
       />
 
+      <div style={{'background-color': '#fff'}}>
+        {filteredData.map(drillInfo => (
+          <DrillCardView cardItem={drillInfo} />
+        ))}
+      </div>
 
-      <ul>
+      {/* <ul style={{'background-color': '#fff'}}>
         {filteredData.map(item => (
           <li key={item.CODE}>{item.CODE}: {item.Title}</li>
         ))}
-      </ul>
+      </ul> */}
       <div>DEBUG: {JSON.stringify(filteredData)}</div>
     </div>
   );

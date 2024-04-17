@@ -7,6 +7,7 @@
   min-height: 100vh;
   width: 100%;
   background-color: #00004d;
+  /* background-color: #fff; */
   background-position: center;
   background-size: cover;
   position: relative;
@@ -256,3 +257,4 @@ img{
   cursor: pointer;
   margin-left: 200px;
 }
+

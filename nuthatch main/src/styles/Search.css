@@ -43,3 +43,14 @@ input {
 .todo-content {
     margin-top: 2rem;
 }
+
+/* .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 10px;
+     background-color: #f0f0f0;
+    list-style-type: none;
+    margin-bottom: 40px;
+    padding: 10px; 
+} */

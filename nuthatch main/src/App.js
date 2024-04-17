@@ -14,33 +14,24 @@ import { usePapaParse } from 'react-papaparse';
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
 
 
-function create_cards(data){
-  const display = document.getElementById("display");
-  for(let i = 0; i < data.length; i++){
-    let card = document.createElement("div");
-    card.className = "event-card";
-    let cardImg =  ''
-    let cardData = ''
-      for (const key in data[i]) {
-        if (key === "CODE" && data[i][key] === '') return;
-        if (key === "Image") {
-            cardImg += `<img src="${data[i][key]}" alt="Photo of gymnastics event called ${data[i]["Title"]}">`;
-            cardImg += '<button type="button">Add to lesson</button>';
-        }
-        if (typeof data[i][key] === "string") {
-            var keywordArray = data[i][key].split(',');
-            for (let k = 0; k < keywordArray.length; k++) {
-                cardData += keywordArray[k];
-            }
-        }
-    }
-    card.innerHTML = cardImg;
-    display.appendChild(card);
+
+async function addFullFilePaths(data) {
+
+  const newData = data.map(async (item) => {
+      const fullImageReference = ref(getStorage(), item['Pack Folder'] + '/full/' + item.Image);
+      const imageURL = await getDownloadURL(fullImageReference);
+      item.fullImageURL = imageURL;
+      const thumbnailReference = ref(getStorage(), item['Pack Folder'] + '/thumbs/' + item.Image.replace('.png', '.jpg'));
+      const thumbnailURL = await getDownloadURL(thumbnailReference);
+      item.thumbnailURL = thumbnailURL;
+      return item;
+    });
+    return Promise.all(newData);
   }
-}
+
 
 function App() {
-  const [csvData, setCSVData] = useState("no data yet");
+  const [csvData, setCSVData] = useState([]);
 
   const { readString } = usePapaParse();
 
@@ -52,10 +43,12 @@ function App() {
       readString(csvText, 
                   {   header: true,
                       worker: true,
-                      complete: (results) => {
+                      complete: async (results) => {
                         console.log("Parsing complete:", results);
-                        setCSVData(results.data);
-                        create_cards(csvData);
+                        const updatedData = await addFullFilePaths(results.data);
+                        console.log("After adding full file paths:",updatedData);
+                        setCSVData(updatedData);
+                        // create_cards(csvData);
                       }
                   });
     }
