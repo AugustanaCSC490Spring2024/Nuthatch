@@ -17,9 +17,6 @@ function Home(props){
                 <Link to="/signup" class="login-button">
 					Sign Up
 				</Link>
-                <div>
-                    {JSON.stringify(props.data)}
-                </div>
             </div>
             <div class="image">
                 <img src={gymnast} alt="gymnastics logo"></img>
