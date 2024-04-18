@@ -17,6 +17,9 @@ function Home(props){
                 <Link to="/signup" class="login-button">
 					Sign Up
 				</Link>
+                <Link to="/programinput" class="login-button">
+					Set up Program
+				</Link>
                 <div>
                     {JSON.stringify(props.data)}
                 </div>

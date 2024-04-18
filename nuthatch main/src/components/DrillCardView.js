@@ -5,14 +5,26 @@ const Search = (props) => {
   
   return (
     <div>
-      <h2>{cardItem.CODE}</h2>
+
+      <h2>{cardItem.Title}</h2>
+
       <img src={cardItem.thumbnailURL} />
+
       <ul>
-        <li>{cardItem.Title}</li>
-        <li>{cardItem.Event}</li>
-        <li>{cardItem.Category}</li>  
+
+        <li><h3>Code</h3>{cardItem.CODE}</li>
+
+        <li><h3>Event</h3>{cardItem.Event}</li>
+
+        <li><h3>Category</h3>{cardItem.Category}</li> 
+
+        <li><h3>Level</h3>{cardItem.Level}</li>
+
+        <li><h3>Equipment</h3>{cardItem.Equipment}</li> 
+
+        <li><h3>Gender</h3>{cardItem.Gender}</li>
+
       </ul>
-      {/* {"CODE":"S1","Event":"ALL","Category":"Shapes","Title":"Hollow","Pack Folder":"Demo1","Image":"1.png","Gender":"N","Model Sex":"F","Level":"ALL","Equipment":"None","Keywords":"hollow, dish, banana," */}
 
     </div>
   );

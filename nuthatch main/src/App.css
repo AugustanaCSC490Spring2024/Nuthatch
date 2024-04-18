@@ -258,3 +258,36 @@ img{
   margin-left: 200px;
 }
 
+.dropdown-button-left {
+  background-color: #4c00b4;
+  color: white;
+  width: 40%;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  float: left;
+}
+
+.dropdown-button-right {
+  background-color: #4c00b4;
+  color: white;
+  width: 40%;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  float: right;
+}
+
+.dropdown-button:hover, .dropdown-button:focus {
+  background-color: #4c00b4;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}

@@ -1,6 +1,7 @@
 import './App.css';
 import SignIn from './components/auth/SignIn.jsx';
 import SignUp from './components/auth/SignUp.jsx';
+import ProgramInput from './components/auth/ProgramInput.jsx';
 import AuthDetails from './components/AuthDetails';
 import Home from './pages/home.js';
 import About from './pages/about.js';
@@ -66,6 +67,7 @@ function App() {
           <Route path="/" element={<Home data={csvData} />} />
           <Route path="/signin" element={<SignIn /> } />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/programinput' element={<ProgramInput />} />
           <Route path='/about' element={<About />} />
           <Route path='/search' element={<Search data={csvData} />} />
         </Routes>
