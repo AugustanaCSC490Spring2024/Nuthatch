@@ -24,6 +24,7 @@ function Home(props){
                     {JSON.stringify(props.data)}
                 </div>
             </div>
+            
             <div class="image">
                 <img src={gymnast} alt="gymnastics logo"></img>
             </div>
