@@ -1,7 +1,8 @@
 /*Credits to https://www.youtube.com/watch?v=mVYCVq6jMb4&ab_channel=CodeWithHafiz*/
 
 .cards{
-    display: flex;
+    display: grid;
+    gap: 10px 10px;
     flex-wrap: wrap;
     justify-content: space-between;
     flex: 0 0 calc(33.33% - 20px);
@@ -13,6 +14,12 @@
     margin-bottom: 20px;
     transition: 0.3s;
     border: 2px solid transparent;
+    font-size: 18px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    color: #fff;
 }
 .cards:hover{
     border-color: #f5424a;
@@ -30,7 +37,7 @@
     }
 }
 
-.title{
+h2{
     font-size: 50px;
     line-height: 60px;
     text-align: center;
