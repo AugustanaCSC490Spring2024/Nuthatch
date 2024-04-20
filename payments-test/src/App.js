@@ -4,7 +4,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import AuthDetails from './components/AuthDetails';
 import React, { useState, useEffect } from 'react';
-import db, { auth } from '../firebase';
+import db, { auth } from './firebase';
 
 function App() {
   return (
