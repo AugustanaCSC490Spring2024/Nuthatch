@@ -3,6 +3,27 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Adjust sizes as needed */
+    gap: 16px;  /* Space between columns and rows */
+    margin-top: 2rem;
+  }
+  
+  .cardContainer {
+    grid-column: span 2; /* Spans over the first two columns */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for cards */
+    gap: 16px;
+  }
+  
+  .lessonPlanContainer {
+    background-color: #f9f9f9; /* Example background color */
+    padding: 20px; /* Padding around content */
+    /* This column will automatically take the third column due to grid layout */
+  }
+  
 .todo-container {
     display: flex;
     justify-content: center;

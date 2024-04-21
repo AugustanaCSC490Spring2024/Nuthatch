@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-// import "../styles/search.css";
+import "../styles/Search.css";
 import { useState, useEffect } from 'react';
 import DrillCardView from '../components/DrillCardView';
 
@@ -32,13 +32,19 @@ const Search = (props) => {
         value={searchTerm}
         onChange={handleInputChange}
       />
+      <div className= 'gridContainer'>
 
-      <div style={{'background-color': '#fff'}}>
-        {filteredData.map(drillInfo => (
-          <DrillCardView cardItem={drillInfo} />
-        ))}
+        <div className='cardContainer'>
+          {filteredData.map(drillInfo => (
+            <DrillCardView cardItem={drillInfo} />
+
+          ))}
+        </div>
+
+        <div className= "lessonPlanContainer">
+          <h1>No Lesson Plan Available</h1>
+        </div>
       </div>
-
       {/* <ul style={{'background-color': '#fff'}}>
         {filteredData.map(item => (
           <li key={item.CODE}>{item.CODE}: {item.Title}</li>

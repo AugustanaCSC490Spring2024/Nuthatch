@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     flex: 0 0 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
+    max-width: 100%;
     width: 100%;
     background: #7ed957;
     border-radius: 10px;
