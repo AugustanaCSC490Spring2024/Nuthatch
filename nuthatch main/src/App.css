@@ -167,9 +167,12 @@ img{
   flex-direction: column;
   margin: auto;
   margin-top: 200px;
+  padding-left: 15px;
   width: 600px;
   background: #fff;
   padding-bottom: 30px;
+  outline-color: #000;
+  outline-width: 5px;
 }
 
 .sign_header{
@@ -290,4 +293,7 @@ img{
 }
 .alignright {
 	float: right;
+}
+.aligncenter {
+	float: center;
 }

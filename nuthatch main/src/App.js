@@ -2,6 +2,7 @@ import './App.css';
 import SignIn from './components/auth/SignIn.jsx';
 import SignUp from './components/auth/SignUp.jsx';
 import ProgramInput from './components/auth/ProgramInput.jsx';
+import DropDown from './components/auth/DropDown.jsx';
 import AuthDetails from './components/AuthDetails';
 import Home from './pages/home.js';
 import About from './pages/about.js';
@@ -70,6 +71,7 @@ function App() {
           <Route path='/programinput' element={<ProgramInput />} />
           <Route path='/about' element={<About />} />
           <Route path='/search' element={<Search data={csvData} />} />
+          <Route path='/dropdown' element={<DropDown />} />
         </Routes>
       </Router>
       {/* <div>{JSON.stringify(csvData)}</div> */}
