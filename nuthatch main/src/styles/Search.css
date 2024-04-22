@@ -7,8 +7,8 @@
 .gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Adjust sizes as needed */
-    gap: 16px;  /* Space between columns and rows */
-    margin-top: 2rem;
+    gap: 3rem;  /* Space between columns and rows */
+    margin:3rem 3rem;
   }
   
   .cardContainer {
