@@ -1,56 +1,46 @@
 /*Credits to https://www.youtube.com/watch?v=mVYCVq6jMb4&ab_channel=CodeWithHafiz*/
-.cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
-.cards {
-    flex: 0 0 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
+.cards{
+    display: grid;
+    gap: 10px 10px;
     width: 100%;
     background: #7ed957;
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 3rem 3rem;
     transition: 0.3s;
     border: 2px solid transparent;
+    font-size: 18px;
+    line-height: 60px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    color: #fff;
 }
-
 .cards:hover{
     border-color: #f5424a;
 }
 
-@media(max-width: 600px){
-    .card{
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-.title{
+h2{
     font-size: 50px;
     line-height: 60px;
     text-align: center;
-    margin-bottom: 20px;
     font-family: "Bebas Neue", sans-serif;
     color: #fff;
 }
 
 img{
-    max-width: 100%;
-    height: auto;
-    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
   }
 
 .btn{
     max-width: 120px;
     width: 100%;
     height: 40px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+
+    margin: auto;
     text-decoration: none;
     color: #00004d;
     border: 2px solid #00004d;
