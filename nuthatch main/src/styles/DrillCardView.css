@@ -9,18 +9,17 @@
     padding: 3rem 3rem;
     transition: 0.3s;
     border: 2px solid transparent;
-    font-size: 18px;
     line-height: 60px;
     text-align: center;
     font-family: "Bebas Neue", sans-serif;
     color: #fff;
 }
 .cards:hover{
-    border-color: #f5424a;
+    border-color: #fff;
 }
 
 h2{
-    font-size: 50px;
+    font-size: 3rem;
     line-height: 60px;
     text-align: center;
     font-family: "Bebas Neue", sans-serif;
@@ -30,12 +29,11 @@ h2{
 img{
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
   }
 
 .btn{
-    max-width: 120px;
-    width: 100%;
+    width: 50%;
     height: 40px;
     justify-content: center;
     align-items: center;
