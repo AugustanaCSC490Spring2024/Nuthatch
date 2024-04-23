@@ -1,4 +1,6 @@
 import './App.css';
+import LessonCreator from './components/LessonCreator.js';
+import LessonContainer from './components/LessonContainer.js';
 import SignIn from './components/auth/SignIn.jsx';
 import SignUp from './components/auth/SignUp.jsx';
 import ProgramInput from './components/auth/ProgramInput.jsx';
@@ -74,6 +76,8 @@ function App() {
           <Route path='/dropdown' element={<DropDown />} />
         </Routes>
       </Router>
+      <h1>Lesson Planner</h1>
+      <LessonContainer />
       {/* <div>{JSON.stringify(csvData)}</div> */}
       <div id="display" class="event-container">
         

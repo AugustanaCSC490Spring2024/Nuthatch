@@ -5,12 +5,12 @@ import {motion} from 'framer-motion';
 import {useState} from 'react';
 import { isDOMComponent } from "react-dom/test-utils";
 
-const Search = (props) => {
+const DrillCardView = (props) => {
 	const cardItem = props.cardItem;
 	const [isOpen, setIsOpen] = useState(false);
 	
 	return (
-		<div className="App">
+		<div className="card-view">
 
 					<motion.div 
 						transition={{layout: {duration: 1, type: "spring" }}} 
@@ -43,4 +43,4 @@ const Search = (props) => {
 };
 
  
-export default Search;
+export default DrillCardView;
