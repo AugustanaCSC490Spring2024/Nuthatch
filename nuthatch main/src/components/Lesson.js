@@ -1,16 +1,17 @@
 import React from 'react';
-import DrillCard from './DrillCardView'; 
+import DrillCardView from './DrillCardView'; 
+import { getCardByCode } from '../drillDB';
 
 const Lesson = ({ lesson }) => {
     return (
         <div className="lesson">
             <h2>{lesson.title}</h2>
             <p>{lesson.description}</p>
-            <div className="drill-cards">
-                {lesson.drills.map(drill => (
-                    <DrillCard key={drill.id} cardItem={drill} />
-                ))}
-            </div>
+            {/* <div className="drill-cards">
+                {lesson.drillCodes.map(drillCode => (
+                    <DrillCardView cardItem={getCardByCode(drillCode)} removeCardFromLesson = {props.removeCardFromLesson} />
+                ))} 
+            </div>  */}
         </div>
     );
 };

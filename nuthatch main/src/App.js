@@ -16,6 +16,7 @@ import { set } from 'firebase/database';
 import { usePapaParse } from 'react-papaparse';
 
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
+import { setListOfDrills } from './drillDB.js';
 
 
 
@@ -52,6 +53,7 @@ function App() {
                         const updatedData = await addFullFilePaths(results.data);
                         console.log("After adding full file paths:",updatedData);
                         setCSVData(updatedData);
+                        setListOfDrills(updatedData);
                         // create_cards(csvData);
                       }
                   });

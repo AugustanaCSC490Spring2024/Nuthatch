@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+.lesson-editor { 
+    display: flex; 
+  } 
+   
+  .search-component, .lesson-component { 
+    flex: 1; 
+  } 
+
 .gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Adjust sizes as needed */
