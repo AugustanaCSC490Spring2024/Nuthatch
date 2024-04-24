@@ -20,9 +20,9 @@ function Home(props){
                 <Link to="/dropdown" class="login-button">
 					Set up Program
 				</Link>
-                <div>
+                {/* <div>   DEBUG
                     {JSON.stringify(props.data)}
-                </div>
+                </div>  */}
             </div>
             
             <div class="image">
