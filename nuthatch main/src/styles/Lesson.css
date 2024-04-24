@@ -1,0 +1,17 @@
+
+.lesson{
+    text-align: center;
+    font-family: "Old Standard TT", serif; 
+}
+
+.text-container{
+    background-color: #89ccff;
+    border-radius: 25px;
+    color: #00004d;
+}
+
+h2{
+    font-family: "Bebas Neue", sans-serif;
+    margin: 0;
+    color: #00004d;
+}

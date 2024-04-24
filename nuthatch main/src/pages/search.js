@@ -26,12 +26,12 @@ const Search = (props) => {
    }
 
   return (
-    <div>
+    <div class= 'grid-container'>
     <div class='lesson-editor'>
       <div class="search-component"><SearchComponent data={props.data} addCardToLessonFunction={addCardToLesson}/> </div>
       <div class="lesson-component"> <Lesson lesson = {currentLesson} removeCardFromLesson = {removeCardFromLesson} /> </div>
     </div>
-    <div> <p style={{'color':'white'}}>{JSON.stringify(currentLesson)}</p> </div>
+    {/* DEBUG <div> <p style={{'color':'white'}}>{JSON.stringify(currentLesson)}</p> </div> */}
     </div>
   );
 };

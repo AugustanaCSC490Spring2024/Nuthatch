@@ -25,12 +25,14 @@ const SearchComponent = (props) => {
 
   return (
     <div>
+      <div className = 'search-container'>
       <input
         type="text"
         placeholder="Search..."
         value={searchTerm}
         onChange={handleInputChange}
       />
+      </div>
       <div className= 'gridContainer'>
 
         <div className='cardContainer'>
