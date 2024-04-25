@@ -5,7 +5,7 @@ function Navbar() {
   return (
     
         <nav>
-            <h3>Gymnastics</h3>
+            <h3 className="title-text">Gymnastics</h3>
             <div class="nav-links">
                 <ul class="nav-menu">
                     <li class="nav-item">

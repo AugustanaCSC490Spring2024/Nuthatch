@@ -1,32 +1,42 @@
+:root{
+  --Federal-blue: #00004d;
+  --Imperial-red: #f5424a;
+  --Green-blue: #2169ac;
+  --White-smoke: #f5f5f5;
+  --Light-sky-blue: #89ccff;
+  --SGBUS-green: #73d957;
+  --White: #fff;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .header{
   min-height: 100vh;
   width: 100%;
-  background-color: #00004d;
-  /* background-color: #fff; */
+  background-color: var(--Green-blue);
   background-position: center;
   background-size: cover;
   position: relative;
 }
 
 nav{
+  background-color: var(--White-smoke);
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   min-height: 70px;
   font-style: normal;
   display: flex;
-  padding: 2% 6%;
+  padding-bottom: 10px 10px;
   justify-content: space-between;
   align-items: center;
-  color: #7ed957;
+  color: var(--Federal-blue);
   font-size: 24px;
 }
 .nav-links{
-
   font-family: "Old Standard TT", serif; 
   font-weight: 400;
   font-style: normal;
@@ -40,14 +50,14 @@ nav{
   position: relative;
 }
 .nav-links ul li a{
-  color: #fff;
+  color: var(--Federal-blue);
   text-decoration: none;
 }
 .nav-links ul li::after{
   content: '';
   width: 0%;
   height: 2px;
-  background: #7ed957;
+  background: var(--Federal-blue);
   display: block;
   margin: auto;
   transition: 0.5s;

@@ -19,7 +19,6 @@ const DrillCardView = (props) => {
 						className="cards"
 						style={{
 							borderRadius: "1rem",
-							boxShadow: "0px 10px 30px rgba(0,0,0, 0.5)",
 						}}
 						>
 							<motion.h2 layout= "position">{cardItem.Title}</motion.h2>
