@@ -17,14 +17,14 @@
 .header{
   min-height: 100vh;
   width: 100%;
-  background-color: var(--Green-blue);
+  background-color: var(--Federal-blue);
   background-position: center;
   background-size: cover;
   position: relative;
 }
 
 nav{
-  background-color: var(--White-smoke);
+  background-color: var(--Federal-blue);
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   min-height: 70px;
@@ -33,7 +33,7 @@ nav{
   padding-bottom: 10px 10px;
   justify-content: space-between;
   align-items: center;
-  color: var(--Federal-blue);
+  color: var(--White-smoke);
   font-size: 24px;
 }
 .nav-links{
@@ -50,14 +50,14 @@ nav{
   position: relative;
 }
 .nav-links ul li a{
-  color: var(--Federal-blue);
+  color: var(--White);
   text-decoration: none;
 }
 .nav-links ul li::after{
   content: '';
   width: 0%;
   height: 2px;
-  background: var(--Federal-blue);
+  background: var(--SGBUS-green);
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -78,7 +78,7 @@ nav{
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #7ed957;
+  background-color: var(--SGBUS-green);
 }
 
 /*https://www.youtube.com/watch?v=flItyHiDm7E&ab_channel=WebDevTutorials*/

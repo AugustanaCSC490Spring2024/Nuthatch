@@ -19,13 +19,12 @@
 
 .text-container{
     margin-top: 10px;
-    background-color: #89ccff;
     border-radius: 25px;
-    color: #00004d;
+    background-color: var(--White);
+    color: var(--Federal-blue);
 }
 
 h2{
     font-family: "Bebas Neue", sans-serif;
     margin: 0;
-    color: #00004d;
 }
