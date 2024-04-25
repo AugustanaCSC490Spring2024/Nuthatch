@@ -10,7 +10,7 @@ const Lesson = (props) => {
                 <h2>{props.lesson.title}</h2>
                 <p>{props.lesson.description}</p>
             </div>
-             <div className="drill-cards">
+            <div className="drill-cards">
                 {props.lesson.drillCodes.map(drillCode => (
                     <DrillCardView cardItem={getCardByCode(drillCode)} removeCardFromLesson = {props.removeCardFromLesson} />
                 ))} 

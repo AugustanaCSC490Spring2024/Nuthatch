@@ -1,32 +1,23 @@
-"use client";
-import { ImageGallery } from "react-image-grid-gallery";
-import gymnast from './0.png';
-import image from '../thumbs/1.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import frostyVid from '../Images/frosty vid.png'
 
-const imagesArray = [
-  {
-    alt: "Image1's alt text",
-    caption: "Image1's description",
-    src: {gymnast}
-  },
-  {
-    alt: "Image2's alt text",
-    caption: "Image2's description",
-    src: {gymnast}
-  },
-  {
-    alt: "Image3's alt text",
-    caption: "Image3's description",
-    src: {image}
+
+
+function About(props){
+    return (
+        
+        <div class="container">
+            <div class="text-box">
+                <h1>About Page</h1>
+                <p>In the future, information about this webste will be displayed here, and possibly a tutorial.</p>
+            </div>
+
+            <div class="image">
+                <img src={frostyVid} alt="Video Placeholder"></img>
+            </div>
+        </div>
+    )
   }
-];
 
-export default function App() {
-  return (
-    <ImageGallery
-      imagesInfoArray={imagesArray}
-      columnWidth={230}
-      gapSize={24}
-    />
-  );
-}
+  export default About;
