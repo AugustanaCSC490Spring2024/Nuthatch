@@ -19,7 +19,6 @@ const DrillCardView = (props) => {
 						className="cards"
 						style={{
 							borderRadius: "1rem",
-							boxShadow: "0px 10px 30px rgba(0,0,0, 0.5)",
 						}}
 						>
 							<motion.h2 layout= "position">{cardItem.Title}</motion.h2>
@@ -34,10 +33,11 @@ const DrillCardView = (props) => {
 				<h3>Event: {cardItem.Event}</h3>
 				<h3>Category: {cardItem.Category}</h3>  
 						</motion.div>
-						)}
+						 )}
+						 <div className="btn-container">
 						<button className = "btn" onClick={() => props.addCardToLessonFunction(cardItem.CODE)}>Add</button>
 					{ <button className = "btn" onClick={() => props.removeCardFromLesson(cardItem.CODE)}>Remove</button> }
-					
+					</div>
 			</motion.div>
 		</div>
 	);
