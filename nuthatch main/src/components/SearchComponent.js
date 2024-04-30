@@ -14,14 +14,12 @@ const SearchComponent = (props) => {
         filterData(value);
     };
 
-
     const filterData = (searchTerm) => {
 
       const fData = props.data.filter((item) => item['Title'].toLowerCase().includes(searchTerm.toLowerCase()) + item['CODE'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Event'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Category'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Level'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Equipment'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Keywords'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Gender'].toLowerCase().includes(searchTerm.toLowerCase()));
 
     setFilteredData(fData);
     };
-
 
   return (
     <div>
@@ -47,6 +45,5 @@ const SearchComponent = (props) => {
     </div>
   );
 };
-
 
 export default SearchComponent;
