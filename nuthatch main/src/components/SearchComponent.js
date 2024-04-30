@@ -41,6 +41,11 @@ const SearchComponent = (props) => {
       </button>
       <div className= 'gridContainer'>
         <div className='cardContainer'>
+        <ul>
+        {filteredData.map(item => (
+          <li key={item.CODE}>{item.CODE}: {item.Title}</li>
+        ))}
+        </ul>
           {filteredData.map(drillInfo => (
             <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
 
