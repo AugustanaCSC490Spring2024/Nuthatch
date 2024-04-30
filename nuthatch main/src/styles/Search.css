@@ -94,6 +94,25 @@ input {
     margin-top: 2rem;
 }
 
+.toggle-button {
+  padding: 10px 20px;
+  background-color: var(--White);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button.image {
+  background-color: var(--SGBUS-green);
+  color: var(--White);
+}
+
+.toggle-button.text {
+  background-color: var(--Imperial-red);
+  color: var(--White);
+}
+
 /* .grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -104,3 +123,4 @@ input {
     margin-bottom: 40px;
     padding: 10px; 
 } */
+

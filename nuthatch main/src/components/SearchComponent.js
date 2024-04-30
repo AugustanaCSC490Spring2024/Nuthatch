@@ -7,6 +7,11 @@ import DrillCardView from './DrillCardView';
 const SearchComponent = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState(props.data);
+    const [isToggled, setIsToggled] = useState(false);
+
+    const handleChange = () => {
+      setIsToggled(!isToggled);
+    };
   
     const handleInputChange = (event) => {
         const { value } = event.target;
@@ -33,8 +38,10 @@ const SearchComponent = (props) => {
         onChange={handleInputChange}
       />
       </div>
+      <button onClick={handleChange} className={`toggle-button ${isToggled ? 'image' : 'text'}`}>
+        {isToggled ? 'Image' : 'Text'}
+      </button>
       <div className= 'gridContainer'>
-
         <div className='cardContainer'>
           {filteredData.map(drillInfo => (
             <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
