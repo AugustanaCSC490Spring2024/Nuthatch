@@ -7,6 +7,7 @@
     --Light-sky-blue: #89ccff;
     --SGBUS-green: #73d957;
     --White: #fff;
+    --global-font-family: "Assistant", sans-serif;
 }
 
 .cards{
@@ -17,7 +18,7 @@
     transition: 0.3s;
     border: 4px solid transparent;
     text-align: center;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--global-font-family);
 }
 .cards:hover{
     border-color: var(--SGBUS-green);
@@ -34,7 +35,7 @@
     background-color: var(--Federal-blue);
     width: 50%;
     margin: 0 auto;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--global-font-family);
     cursor: pointer;
     border-radius: 4px;
 }
