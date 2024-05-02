@@ -8,10 +8,10 @@ import { getCardsBySearch } from '../drillDB';
 const SearchComponent = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState(props.data);
-    const [isToggled, setIsToggled] = useState(false);
+    const [isImageView, setisImageView] = useState(false);
 
     const handleChange = () => {
-      setIsToggled(!isToggled);
+      setisImageView(!isImageView);
     };
   
     const handleInputChange = (event) => {
@@ -36,20 +36,26 @@ const SearchComponent = (props) => {
         onChange={handleInputChange}
       />
       </div>
-      <button onClick={handleChange} className={`toggle-button ${isToggled ? 'image' : 'text'}`}>
-        {isToggled ? 'Image' : 'Text'}
+      <button onClick={handleChange} className={`toggle-button ${isImageView ? 'image' : 'text'}`}>
+        {isImageView ? 'Image' : 'Text'}
       </button>
       <div className= 'gridContainer'>
         <div className='cardContainer'>
+          {isImageView ? (
+              filteredData.map(drillInfo => (
+                <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
+              ))) : (
+                <ul>
+                {filteredData.map(item => (
+                  <li key={item.CODE}>{item.CODE}: {item.Title}</li>
+                ))}
+                </ul>
+          )
+          }
         <ul>
-        {filteredData.map(item => (
-          <li key={item.CODE}>{item.CODE}: {item.Title}</li>
-        ))}
+        {}
         </ul>
-          {filteredData.map(drillInfo => (
-            <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
-
-          ))}
+          {}
         </div>
 
       </div>
