@@ -8,6 +8,7 @@ import DropDown from './components/auth/DropDown.jsx';
 import AuthDetails from './components/AuthDetails';
 import Home from './pages/home.js';
 import About from './pages/about.js';
+import Contact from './pages/contact.js';
 import Search from './pages/search.js';
 import LessonView from './components/LessonView.js';
 import Navbar from './components/Navbar.js';
@@ -75,6 +76,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path='/programinput' element={<ProgramInput />} />
           <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/search' element={<Search data={csvData} />} />
           <Route path='/lessonview' element={<LessonView data={csvData} />} />
           <Route path='/dropdown' element={<DropDown />} />
