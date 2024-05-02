@@ -1,21 +1,16 @@
 import React from "react";
- 
-const Contact = () => {
+import { Link } from "react-router-dom";
+
+function Contact(props){
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "centre",
-                alignItems: "centre",
-                height: "100vh",
-            }}
-        >
-            <h1>
-                GeeksforGeeks is a Computer Science portal
-                for geeks.
-            </h1>
+        
+        <div class="container">
+            <div class="text-box">
+                <h1>Contact Page</h1>
+                <p>In the future, Professor Keehn's info will be displayed here.</p>
+            </div>
         </div>
-    );
-};
- 
+    )
+}
+
 export default Contact;
