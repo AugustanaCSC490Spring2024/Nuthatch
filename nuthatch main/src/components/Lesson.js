@@ -2,6 +2,7 @@ import React from 'react';
 import DrillCardView from './DrillCardView'; 
 import { getCardByCode } from '../drillDB';
 import "../styles/Lesson.css";
+import { saveLessonToFirestore } from '../firestoreFunctions';
 
 const Lesson = (props) => {
     return (
@@ -9,6 +10,7 @@ const Lesson = (props) => {
             <div className='text-container'>
                 <h2>{props.lesson.title}</h2>
                 <p>{props.lesson.description}</p>
+                <button onClick={() => saveLessonToFirestore(props.lesson)}>Save Lesson</button>
             </div>
             <div className="drill-cards">
                 {props.lesson.drillCodes.map(drillCode => (
