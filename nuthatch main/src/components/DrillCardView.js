@@ -3,7 +3,6 @@ import React from "react";
 import "../styles/DrillCardView.css";
 import {motion} from 'framer-motion';
 import {useState} from 'react';
-import { isDOMComponent } from "react-dom/test-utils";
 
 const DrillCardView = (props) => {
 	const cardItem = props.cardItem;
@@ -22,8 +21,8 @@ const DrillCardView = (props) => {
 						}}
 						>
 							<motion.h2 layout= "position">{cardItem.Title}</motion.h2>
-							<img src={cardItem.thumbnailURL} />
-							{isOpen && (
+							<img className="thumbnail" src={cardItem.thumbnailURL} />
+							{isOpen && ( 
 						<motion.div
 								initial={{ opacity: 0}}
 								animate={{ opacity: 1}}
@@ -35,8 +34,12 @@ const DrillCardView = (props) => {
 						</motion.div>
 						)}
 						<div className="btn-container">
-						<button className = "btn" onClick={() => props.addCardToLessonFunction(cardItem.CODE)}>Add</button>
-					{ <button className = "btn" onClick={() => props.removeCardFromLesson(cardItem.CODE)}>Remove</button> }
+							{props.addCardToLessonFunction && (
+								<button className = "btn" onClick={() => props.addCardToLessonFunction(cardItem.CODE)}>Add</button>
+							)}
+							{props.removeCardFromLesson && (
+                                <button className = "btn" onClick={() => props.removeCardFromLesson(cardItem.CODE)}>Remove</button>
+                            )}
 					</div>
 			</motion.div>
 		</div>
