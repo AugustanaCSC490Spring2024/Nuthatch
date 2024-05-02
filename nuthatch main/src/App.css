@@ -30,7 +30,7 @@ nav{
   min-height: 70px;
   font-style: normal;
   display: flex;
-  padding-bottom: 10px 10px;
+  padding-left: 15px;
   justify-content: space-between;
   align-items: center;
   color: var(--White-smoke);
@@ -79,6 +79,13 @@ nav{
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: var(--SGBUS-green);
+}
+
+.nav-menu{
+  margin: 0;
+}
+.title-text{
+  margin: 0;
 }
 
 /*https://www.youtube.com/watch?v=flItyHiDm7E&ab_channel=WebDevTutorials*/

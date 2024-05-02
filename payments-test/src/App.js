@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -8,14 +7,17 @@ import db, { auth } from './firebase';
 import { collection, getDocs, addDoc, query, where, doc, onSnapshot } from "firebase/firestore"; 
 
 async function subscribe() { 
+  try {
+    console.log("db",db)
+    console.log("id", auth.currentUser.uid)
+    const docRef = await addDoc(collection(db, "customers", auth.currentUser.uid, "checkout_sessions"), {
+      price: 'price_1P6yuHRpOObAemDAlnVgu088',
+      success_url: window.location.origin,
+      cancel_url: window.location.origin,
+    });
+  
 
-  console.log("db",db)
-  console.log("id", auth.currentUser.uid)
-  const docRef = await addDoc(collection(db, "customers", auth.currentUser.uid, "checkout_sessions"), {
-    price: 'price_1P6yuHRpOObAemDAlnVgu088',
-    success_url: window.location.origin,
-    cancel_url: window.location.origin,
-  });
+  
 
   // NEED TO TRASNLATE the following event listening code to use
   // the modular firebase API instead of the old way...
@@ -34,6 +36,11 @@ async function subscribe() {
       window.location.assign(url);
     }
   });
+  
+  } catch (error) {
+    console.log("Signed in error message:", error.message);
+    alert("You need to be signed in");
+  }
 }
 
 function App() {
@@ -73,7 +80,7 @@ function App() {
     
 
 
-  //   db.collection('customers')
+  //  db.collection('customers')
   // .doc(currentUser.uid)
   // .collection('subscriptions')
   // .where('status', 'in', ['trialing', 'active'])
@@ -90,7 +97,7 @@ function App() {
       <SignUp/>
       <AuthDetails/>
       {/* <a href='https://docs.stripe.com/terminal/references/testing'>Fake Cards</a> */}
-      <button onClick={() => subscribe()}>Subscribe</button>
+      <button onClick={() => subscribe()}>Subscribe To Free Teir</button>
     </div>
   );
 }
