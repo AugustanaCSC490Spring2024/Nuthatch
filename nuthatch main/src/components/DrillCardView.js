@@ -35,10 +35,10 @@ const DrillCardView = (props) => {
 						)}
 						<div className="btn-container">
 							{props.addCardToLessonFunction && (
-								<button className = "btn" onClick={() => props.addCardToLessonFunction(cardItem.CODE)}>Add</button>
+								<button className = "addRemBtn" onClick={() => props.addCardToLessonFunction(cardItem.CODE)}>Add</button>
 							)}
 							{props.removeCardFromLesson && (
-                                <button className = "btn" onClick={() => props.removeCardFromLesson(cardItem.CODE)}>Remove</button>
+                                <button className = "addRemBtn" onClick={() => props.removeCardFromLesson(cardItem.CODE)}>Remove</button>
                             )}
 					</div>
 			</motion.div>

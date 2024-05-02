@@ -21,25 +21,25 @@
 }
 .cards:hover{
     border-color: var(--SGBUS-green);
-    color: var(--White);
 }
 
 .thumbnail{
     width: 100%;
     margin: 0 auto;
     display: block;
-  }
-
-.btn-container{
-    width: 50%;
-    margin: 0 auto;
-    color: var(--Federal-blue);
-    font-family: "Bebas Neue", sans-serif;
-    background: var(--White);
-    cursor: pointer;
 }
 
-.btn:hover{
+.addRemBtn{
+    color: var(--White);
+    background-color: var(--Federal-blue);
+    width: 50%;
+    margin: 0 auto;
+    font-family: "Bebas Neue", sans-serif;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.addRemBtn:hover{
     background-color: var(--SGBUS-green);
     transition: 0.7s;
   }
