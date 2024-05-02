@@ -7,7 +7,8 @@
     --Light-sky-blue: #89ccff;
     --SGBUS-green: #73d957;
     --White: #fff;
-    --global-font-family: "Assistant", sans-serif;
+    --primary-font-family: "Assistant", sans-serif;
+    --second-font-family: "Lato", sans-serif;
 }
 
 .cards{
