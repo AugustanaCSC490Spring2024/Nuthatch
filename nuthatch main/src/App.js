@@ -15,7 +15,9 @@ import Navbar from './components/Navbar.js';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { set } from 'firebase/database';
+import { auth } from './firebase.js';
 import { usePapaParse } from 'react-papaparse';
+
 
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
 import { setListOfDrills } from './drillDB.js';
@@ -44,6 +46,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => { 
+
       const pathReference = ref(getStorage(), 'Demo1/Demo1.csv');
       const blob = await getBlob(pathReference);
       const csvText = await blob.text();
@@ -88,6 +91,7 @@ function App() {
       <div id="display" class="event-container">     
     </div> */}
     </div>
+    <p>{auth.currentUser ? "Signed in as " + auth.currentUser.email : "Not signed in"} </p>
     </section>
   );
 }
