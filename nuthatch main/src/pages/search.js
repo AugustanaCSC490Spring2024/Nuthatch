@@ -10,11 +10,15 @@ const Search = (props) => {
   const [currentLesson, setCurrentLesson] = useState({'title': 'Untitled Lesson', 'description':"not done yet", 'drillCodes':['S1', 'S30']});
 
   const addCardToLesson = function (cardCode) {
-    console.log("Adding card to lesson: " + cardCode);
-    const newDrillCodes = [...currentLesson.drillCodes, cardCode];
-    const newLesson = {...currentLesson, drillCodes:newDrillCodes}
-    console.log(JSON.stringify(newLesson));
-    setCurrentLesson(newLesson);
+    if (currentLesson.drillCodes.includes(cardCode)) {
+      console.log("Card already exists in current lesson");
+    } else {
+      console.log("Adding card to lesson: " + cardCode);
+      const newDrillCodes = [...currentLesson.drillCodes, cardCode];
+      const newLesson = {...currentLesson, drillCodes:newDrillCodes}
+      console.log(JSON.stringify(newLesson));
+      setCurrentLesson(newLesson);
+    }
   }
 
   const removeCardFromLesson = function (cardCode) {
