@@ -82,11 +82,6 @@ function App() {
           <Route path='/dropdown' element={<DropDown />} />
         </Routes>
       </Router>
-      {/* <h1>Lesson Planner</h1>
-      <LessonContainer />
-      { <div>{JSON.stringify(csvData)}</div> }
-      <div id="display" class="event-container">     
-    </div> */}
     </div>
     </section>
   );

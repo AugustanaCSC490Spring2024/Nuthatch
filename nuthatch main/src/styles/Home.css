@@ -1,98 +1,228 @@
-.home {
-  width: 100%;
-  height: 90vh;
+:root{
+  --Federal-blue: #00004d;
+  --Imperial-red: #f5424a;
+  --Green-blue: #2169ac;
+  --White-smoke: #f5f5f5;
+  --Light-sky-blue: #89ccff;
+  --SGBUS-green: #73d957;
+  --White: #fff;
+  --primary-font-family: "Assistant", sans-serif;
+  --second-font-family: "Lato", sans-serif;
+}
+
+.container{
   display: flex;
-  justify-content: center;
-  align-items: left;
-  flex-direction: column;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-.headerContainer {
-  width: auto;
-  margin-left: 50px;
-}
-
-.headerContainer h1 {
-  justify-content: center;
   align-items: center;
-  font-size: 90px;
-  height: 60px;
-  font-weight: 50;
-  color: black;
 }
 
-.headerContainer p {
-  padding: 0;
-  font-size: 40px;
-  font-weight: lighter;
-  color: black;
+.text-box{
+  flex: 1;
+  text-align: left;
+  padding-left: 5%;
 }
 
-.headerContainer button {
-  color: black;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  justify-content: center;
-  background-color: #121619;
-  height: 50px;
-  width: 180px;
-  color: white;
+.text-box h1{
+  font-family: var(--primary-font-family);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 62px;
+  color: var(--SGBUS-green);
+}
+
+.text-box p{
+  font-family: var(--second-font-family);
+  font-weight: 400;
+  font-style: normal;
+  margin: 40px 0px;
+  font-size: 14px;
+  color: var(--White);
+}
+
+.image{
+  flex: 1;
+  text-align: center;
+}
+
+img{
+  max-width: 75%;
+  height: auto;
+}
+
+.login-button{
+  display: inline-block;
   text-decoration: none;
-  font-size: 20px;
-}
-
-.headerContainer button:hover {
-  background-color: #07090a;
+  color: var(--Federal-blue);
+  border: 2px solid var(--White);
+  padding: 12px 34px;
+  font-size: 16px;
+  font-family: var(--primary-font-family);
+  font-weight: 400;
+  font-style: normal;
+  background: var(--SGBUS-green);
+  position: relative;
   cursor: pointer;
-  transition: 0.3s ease-in;
+}
+.login-button:hover{
+  background-color: var(--White);
+  transition: 0.7s;
 }
 
-@media only screen and (max-width: 650px) {
-  .home {
-    justify-content: center;
-    align-items: center;
-  }
-  .headerContainer h1,
-  .headerContainer p {
-  }
+/*This below is the css for the login and signup popup, check with Logan before refactoring*/
+.dropdown-button-left {
+  background-color: #4c00b4;
+  color: white;
+  width: 40%;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  float: left;
+}
 
-  .headerContainer {
-    margin-left: 0px;
-    border-radius: 10px;
-    padding: 10px;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #121619;
-    color: white;
-  }
+.dropdown-button-right {
+  background-color: #4c00b4;
+  color: white;
+  width: 40%;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  float: right;
+}
+.sign_container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 200px;
+  padding-left: 15px;
+  width: 600px;
+  background: var(--White);
+  padding-bottom: 30px;
+  outline-color: var(--Federal-blue);
+  outline-width: 5px;
+}
 
-  .headerContainer h1 {
-    font-size: 40px;
-    height: 30px;
-    color: white;
-  }
+.sign_header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
+}
 
-  .headerContainer p {
-    font-size: 30px;
-    color: white;
-  }
+.sign_text{
+  color: var(--Federal-blue);
+  font-size: 48px;
+  font-weight: 700;
+}
 
-  .headerContainer button {
-    background-color: white;
-    color: #121619;
-    margin-bottom: 30px;
-  }
+.sign_underline{
+  width: 61px;
+  height: 6px;
+  background: var(--Federal-blue);
+  border-radius: 9px;
+}
 
-  .headerContainer button:hover {
-    background-color: rgb(225, 225, 225);
-    color: #121619;
-  }
+.sign_inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 55px;
+}
+
+.sign_input{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 480px;
+  height: 80px;
+  background: var(--White);
+  border-radius: 6px;
+}
+
+.sign_input img{
+  margin: 0px 30px;
+}
+
+.sign_input input{
+  height: 50px;
+  width: 400px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #797979;
+  font-size: 19px;
+}
+
+.sign_forgot-password{
+  padding-left: 20px;
+  margin-top: 27px;
+  color: #797979;
+  font-size: 18px;
+}
+
+.forgot-password span{
+  color: #4c00b4;
+  cursor: pointer;
+}
+
+.sign_submit-container{
+  display: flex;
+  gap: 3px;
+  margin: 20px auto;
+}
+
+.sign_submit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 59px;
+  background: #4c00b4;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 200px;
+}
+
+.dropdown-button-left {
+  background-color: #4c00b4;
+  color: white;
+  width: 40%;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  float: left;
+}
+
+.dropdown-button-right {
+  background-color: #4c00b4;
+  color: white;
+  width: 40%;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  float: right;
+}
+
+.dropdown-button:hover, .dropdown-button:focus {
+  background-color: #4c00b4;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	float: center;
 }
