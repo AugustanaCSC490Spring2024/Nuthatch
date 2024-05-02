@@ -3,6 +3,7 @@ import "../App.css";
 import "../styles/Search.css";
 import { useState, useEffect } from 'react';
 import DrillCardView from './DrillCardView';
+import { getCardsBySearch } from '../drillDB';
 
 const SearchComponent = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -21,8 +22,7 @@ const SearchComponent = (props) => {
 
     const filterData = (searchTerm) => {
 
-      const fData = props.data.filter((item) => item['Title'].toLowerCase().includes(searchTerm.toLowerCase()) + item['CODE'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Event'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Category'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Level'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Equipment'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Keywords'].toLowerCase().includes(searchTerm.toLowerCase()) + item['Gender'].toLowerCase().includes(searchTerm.toLowerCase()));
-
+      const fData = getCardsBySearch(searchTerm);
     setFilteredData(fData);
     };
 
