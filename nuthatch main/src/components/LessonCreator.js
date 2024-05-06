@@ -33,7 +33,8 @@ const LessonCreator = ({ addLesson }) => {
                 placeholder="Enter lesson name"
                 required
             />
-            <textarea
+            <input
+                type="text"
                 value={description}
                 onChange={handleDescriptionChange}
                 placeholder="Enter description"
