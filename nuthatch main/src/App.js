@@ -28,7 +28,7 @@ async function subscribe() {
     console.log("db",db)
     console.log("id", auth.currentUser.uid)
     const docRef = await addDoc(collection(db, "customers", auth.currentUser.uid, "checkout_sessions"), {
-      price: 'price_1P9TlCC2ueubEsOdRFNAo7VE',
+      price: 'price_1P9TdDC2ueubEsOdDuf82Ikr',
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
