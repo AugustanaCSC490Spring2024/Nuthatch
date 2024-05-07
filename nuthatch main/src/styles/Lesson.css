@@ -6,11 +6,13 @@
     --Light-sky-blue: #89ccff;
     --SGBUS-green: #73d957;
     --White: #fff;
+    --primary-font-family: "Assistant", sans-serif;
+    --second-font-family: "Lato", sans-serif;
 }
 
 .lesson{
     text-align: center;
-    font-family: "Old Standard TT", serif; 
+    font-family: var(--primary-font-family); 
 }
 
 .drill-cards{
@@ -25,6 +27,6 @@
 }
 
 h2{
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--second-font-family);
     margin: 0;
 }
