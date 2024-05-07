@@ -44,9 +44,10 @@ const SearchComponent = (props) => {
         <div className='cardContainer'>
           {isImageView ? (
               filteredData.map(drillInfo => (
+                
                 <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
               ))) : (
-                <ul>
+                <ul class = "TextViewList">
                 {filteredData.map(item => (
                   <li key={item.CODE}>{item.CODE}: {item.Title} <button className="addBtn" onClick={() => props.addCardToLessonFunction(item.CODE)}>Add</button></li>
                 ))}

@@ -10,12 +10,6 @@
   --second-font-family: "Lato", sans-serif;
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 .search-container {
   margin: 10px 10px;
 }
@@ -24,14 +18,14 @@
     display: flex; 
   } 
    
-  .search-component{
-    flex: 1;
-  }
-  
-  .lesson-component {  
-    flex: 1; 
-    margin-right: 20px;
-  } 
+.search-component{
+  flex: 1;
+}
+
+.lesson-component {  
+  flex: 1; 
+  margin-right: 20px;
+} 
   
 .gridContainer {
     display: grid;
@@ -119,15 +113,9 @@ input {
   color: var(--White);
 }
 
-
-/* .grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 10px;
-     background-color: #f0f0f0;
-    list-style-type: none;
-    margin-bottom: 40px;
-    padding: 10px; 
-} */
+.TextViewList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
 

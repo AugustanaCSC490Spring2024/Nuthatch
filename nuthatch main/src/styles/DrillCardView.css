@@ -45,3 +45,7 @@
     background-color: var(--SGBUS-green);
     transition: 0.7s;
   }
+
+.card-view{
+    padding-bottom: 10px;
+}
