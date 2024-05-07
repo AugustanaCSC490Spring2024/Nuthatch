@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import "../styles/Search.css";
+import "../styles/TextCardView.css";
 import { useState, useEffect } from 'react';
 import DrillCardView from './DrillCardView';
 import { getCardsBySearch } from '../drillDB';
