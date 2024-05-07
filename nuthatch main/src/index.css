@@ -9,6 +9,38 @@ body {
   background: linear-gradient(#2A00B7, #42006C)
 }
 
+/* Assistant Regular */
+@font-face {
+  font-family: 'Assistant';
+  src: url('/src/components/Fonts/Assistant/static/Assistant-Regular.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal;
+}
+
+/* Assistant Bold */
+@font-face {
+  font-family: 'Assistant';
+  src: url('/src/components/Fonts/Assistant/static/Assistant-Bold.ttf') format('truetype');
+  font-weight: 700; 
+  font-style: bold;
+}
+
+/* Lato Regular */
+@font-face {
+  font-family: 'Lato';
+  src: url('/src/components/Fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal;
+}
+
+/* Lato Bold */
+@font-face {
+  font-family: 'Lato';
+  src: url('/src/components/Fonts/Lato/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: bold;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
