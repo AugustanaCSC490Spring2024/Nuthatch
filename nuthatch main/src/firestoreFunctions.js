@@ -1,5 +1,5 @@
 import { db, auth } from "./firebase";
-import { collection, addDoc, getDoc, doc } from "firebase/firestore";
+import { collection, addDoc, getDoc, doc, getDocs } from "firebase/firestore";
 
 
 async function saveLessonToFirestore(lesson) {
@@ -19,4 +19,16 @@ async function saveLessonToFirestore(lesson) {
 
 }
 
-export { saveLessonToFirestore };
+async function getLessonsFromFirestore() {
+  console.log("Getting lessons from Firestore");
+  const collectionRef = collection(db, "userdata", auth.currentUser.uid, "lessons");
+  const querySnapshot = await getDocs(collectionRef);
+
+  //console.log(JSON.stringify(querySnapshot));
+  const allUserLessons = querySnapshot.docs.map((doc) => 
+    ({id: doc.id, ...doc.data()}));
+  
+  return allUserLessons;
+}
+
+export { saveLessonToFirestore, getLessonsFromFirestore };

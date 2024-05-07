@@ -6,9 +6,23 @@ import SearchComponent from '../components/SearchComponent';
 import Lesson from "../components/Lesson";
 import LessonCreator from "./LessonCreator";
 import LessonsContainer from "./LessonContainer";
+import { getLessonsFromFirestore } from "../firestoreFunctions";
 
-const LessonView = (props) => {
-    
+const LessonView = (props) => { 
+  const [lessons, setLessons] = useState([]);
+  
+  useEffect(() => {
+
+    async function fetchLessons() {
+      // Load lessons from firstore
+      const theLessons = await getLessonsFromFirestore();
+      setLessons(theLessons);
+    };
+    fetchLessons();
+  }, []);
+
+
+
   return (
     <div class= 'container'>
          <button className="lesson-create-button" onClick={
@@ -20,6 +34,13 @@ const LessonView = (props) => {
             }
           )
          }>Create Lesson</button>
+         <div>
+         <ul>
+         {lessons.map(lesson => (
+           <li>{lesson.title}</li>
+         ))}
+         </ul>
+         </div>
     </div>
   );
 };
