@@ -67,6 +67,10 @@ img{
   transition: 0.7s;
 }
 
+.noEffects{
+  text-decoration: none !important;
+  text-emphasis: none !important;
+}
 
 
 /*This below is the css for the login and signup popup, check with Logan before refactoring*/

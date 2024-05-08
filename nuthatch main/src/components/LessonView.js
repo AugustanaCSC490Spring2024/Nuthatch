@@ -25,7 +25,7 @@ const LessonView = (props) => {
 
   return (
     <div class= 'container'>
-         <button class = "btn1" className="lesson-create-button" onClick={
+         <button class = "btn1" className="btn2" onClick={
           () => props.LessonContainer.AddLesson(
             {
               title: "",

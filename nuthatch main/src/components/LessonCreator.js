@@ -40,7 +40,7 @@ const LessonCreator = ({ addLesson }) => {
                 placeholder="Enter description"
                 required
             />
-            <button type="submit">Add Lesson</button>
+            <button type="btn2">Add Lesson</button>
         </form>
     );
 };

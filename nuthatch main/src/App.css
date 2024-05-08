@@ -29,7 +29,7 @@
 .btn1{
   background: var(--Federal-blue) !important;
   margin: 20px 10px !important;
-  width: fit-content;
+  width: fit-content !important;
   border: 1px solid var(--SGBUS-green);
   padding: 14px 50px !important;
   border-radius: 6px;
@@ -48,7 +48,7 @@ background: var(--SGBUS-green) !important;
 .btn2{
   background: var(--SGBUS-green) !important;
   margin: 20px 10px !important;
-  width: fit-content;
+  width: fit-content !important;
   border: 1px solid var(--SGBUS-green);
   padding: 14px 50px;
   border-radius: 6px;
@@ -67,7 +67,7 @@ background: var(--Federal-blue) !important;
 .btn3{
   background: var(--White) !important;
   margin-bottom: 5px;
-  width: fit-content;
+  width: fit-content !important;
   border: 1px solid var(--SGBUS-green);
   padding: 2px 3px !important;
   border-radius: 6px;
@@ -80,4 +80,10 @@ background: var(--Federal-blue) !important;
 
 .btn3:hover{
 background: var(--SGBUS-green) !important;
+}
+
+@media screen and (max-width: 768px){
+  .btn1, .btn2, .btn3{
+    font-size: small;
+  }
 }
