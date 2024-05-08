@@ -6,6 +6,7 @@
   --Light-sky-blue: #89ccff;
   --SGBUS-green: #73d957;
   --White: #fff;
+  --black: #000;
 }
 
 *{
@@ -23,6 +24,8 @@
   position: relative;
 }
 
+
+/* -----------Blue Button---------------- */
 .btn1{
   background: var(--Federal-blue) !important;
   margin: 20px 10px !important;
@@ -41,6 +44,7 @@
 background: var(--SGBUS-green) !important;
 }
 
+/* -----------Green Button---------------- */
 .btn2{
   background: var(--SGBUS-green) !important;
   margin: 20px 10px !important;
@@ -57,4 +61,23 @@ background: var(--SGBUS-green) !important;
 
 .btn2:hover{
 background: var(--Federal-blue) !important;
+}
+
+/* -----------White Button---------------- */
+.btn3{
+  background: var(--White) !important;
+  margin-bottom: 5px;
+  width: fit-content;
+  border: 1px solid var(--SGBUS-green);
+  padding: 2px 3px !important;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font: var(--primary-font-family);
+  font-size: 20px;
+  color: var(--black) !important;
+  transition: background 0.5s;
+}
+
+.btn3:hover{
+background: var(--SGBUS-green) !important;
 }

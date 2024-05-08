@@ -49,7 +49,7 @@ const SearchComponent = (props) => {
               ))) : (
                 <ul class = "TextViewList">
                 {filteredData.map(item => (
-                  <li key={item.CODE}>{item.CODE}: {item.Title} <button className="addBtn" onClick={() => props.addCardToLessonFunction(item.CODE)}>Add</button></li>
+                  <li key={item.CODE}>{item.CODE}: {item.Title} <button className="btn3" onClick={() => props.addCardToLessonFunction(item.CODE)}>Add</button></li>
                 ))}
                 </ul>
           )

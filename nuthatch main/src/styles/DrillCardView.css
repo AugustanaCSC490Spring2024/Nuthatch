@@ -31,21 +31,6 @@
     display: block;
 }
 
-.addRemBtn{
-    color: var(--White);
-    background-color: var(--Federal-blue);
-    width: 50%;
-    margin: 0 auto;
-    font-family: var(--global-font-family);
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.addRemBtn:hover{
-    background-color: var(--SGBUS-green);
-    transition: 0.7s;
-  }
-
 .card-view{
     padding-bottom: 10px;
 }

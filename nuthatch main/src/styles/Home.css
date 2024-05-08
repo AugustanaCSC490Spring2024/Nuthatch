@@ -48,7 +48,24 @@ img{
   height: auto;
 }
 
-
+.login-button{
+  display: inline-block;
+  text-decoration: none;
+  color: var(--Federal-blue);
+  border: 2px solid var(--White);
+  padding: 12px 34px;
+  font-size: 16px;
+  font-family: var(--primary-font-family);
+  font-weight: 400;
+  font-style: normal;
+  background: var(--SGBUS-green);
+  position: relative;
+  cursor: pointer;
+}
+.login-button:hover{
+  background-color: var(--White);
+  transition: 0.7s;
+}
 
 
 
@@ -166,15 +183,24 @@ img{
   justify-content: center;
   width: 220px;
   height: 59px;
-  background: #4c00b4;
   border-radius: 50px;
   color: #fff;
   font-size: 19px;
   font-weight: 700;
   cursor: pointer;
   margin-left: 200px;
+  background: var(--Federal-blue) !important;
+  border: 1px solid var(--SGBUS-green);
+  padding: 14px 50px !important;
+  text-decoration: none !important;
+  font: var(--primary-font-family);
+  color: var(--White) !important;
+  transition: background 0.5s;
 }
 
+.sign_submit:hover{
+background: var(--SGBUS-green) !important;
+}
 .dropdown-button-left {
   background-color: #4c00b4;
   color: white;
