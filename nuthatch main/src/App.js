@@ -210,9 +210,9 @@ function App() {
       </Router>
     </div>
     {/* <a href='https://docs.stripe.com/terminal/references/testing'>Fake Cards</a>  */}
-    <button class = "payButton" onClick={() => subscribeFree()}>Free Subscription</button>
-    <button class = "payButton" onClick={() => subscribeMain()}>Main Subscription</button>
-    <button class = "payButton" onClick={() => subscribePremiumTier()}>Premium Subscription</button>
+    <button class = "btn1" onClick={() => subscribeFree()}>Free Subscription</button>
+    <button class = "btn1" onClick={() => subscribeMain()}>Main Subscription</button>
+    <button class = "btn1" onClick={() => subscribePremiumTier()}>Premium Subscription</button>
     <p>{auth.currentUser ? "Signed in as " + auth.currentUser.email : "Not signed in"} </p>
     </section>
   );
