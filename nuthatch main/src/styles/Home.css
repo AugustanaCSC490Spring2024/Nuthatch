@@ -8,6 +8,8 @@
   --White: #fff;
   --primary-font-family: "Assistant", sans-serif;
   --second-font-family: "Lato", sans-serif;
+  --gray-color: #797979;
+  
 }
 
 .container{
@@ -75,8 +77,8 @@ img{
 
 /*This below is the css for the login and signup popup, check with Logan before refactoring*/
 .dropdown-button-left {
-  background-color: #4c00b4;
-  color: white;
+  background-color: var(--Federal-blue);
+  color: var(--White);
   width: 40%;
   padding: 16px;
   font-size: 16px;
@@ -87,8 +89,8 @@ img{
 }
 
 .dropdown-button-right {
-  background-color: #4c00b4;
-  color: white;
+  background-color: var(--Federal-blue);
+  color: var(--White);
   width: 40%;
   padding: 16px;
   font-size: 16px;
@@ -159,19 +161,19 @@ img{
   border: none;
   outline: none;
   background: transparent;
-  color: #797979;
+  color: var(--gray-color);
   font-size: 19px;
 }
 
 .sign_forgot-password{
   padding-left: 20px;
   margin-top: 27px;
-  color: #797979;
+  color: var(--gray-color);
   font-size: 18px;
 }
 
 .forgot-password span{
-  color: #4c00b4;
+  color: var(--Federal-blue);
   cursor: pointer;
 }
 
@@ -188,7 +190,7 @@ img{
   width: 220px;
   height: 59px;
   border-radius: 50px;
-  color: #fff;
+  color: var(--White);
   font-size: 19px;
   font-weight: 700;
   cursor: pointer;
@@ -206,8 +208,8 @@ img{
 background: var(--SGBUS-green) !important;
 }
 .dropdown-button-left {
-  background-color: #4c00b4;
-  color: white;
+  background-color: var(--Federal-blue);
+  color: var(--White);
   width: 40%;
   padding: 16px;
   font-size: 16px;
@@ -218,8 +220,8 @@ background: var(--SGBUS-green) !important;
 }
 
 .dropdown-button-right {
-  background-color: #4c00b4;
-  color: white;
+  background-color: var(--Federal-blue);
+  color: var(--White);
   width: 40%;
   padding: 16px;
   font-size: 16px;
@@ -230,7 +232,7 @@ background: var(--SGBUS-green) !important;
 }
 
 .dropdown-button:hover, .dropdown-button:focus {
-  background-color: #4c00b4;
+  background-color: var(--Federal-blue);
 }
 .alignleft {
 	float: left;

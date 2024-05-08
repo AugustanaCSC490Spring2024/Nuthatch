@@ -1,3 +1,14 @@
+:root{
+    --Federal-blue: #00004d;
+    --Imperial-red: #f5424a;
+    --Green-blue: #2169ac;
+    --White-smoke: #f5f5f5;
+    --Light-sky-blue: #89ccff;
+    --SGBUS-green: #73d957;
+    --White: #fff;
+    --black: #000;
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +18,7 @@
 .header{
     min-height: 100vh;
     width: 100%;
-    background-color: #00004d;
+    background-color: var(--Federal-blue);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -22,7 +33,7 @@ nav{
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
-    color: #7ed957;
+    color: var(--SGBUS-green);
     font-size: 24px;
 }
 .nav-links{
@@ -39,7 +50,7 @@ nav{
     position: relative;
 }
 .nav-links ul li a{
-    color: #fff;
+    color: var(--White);
     text-decoration: none;
     font-size: 14px;
 }
@@ -49,7 +60,7 @@ nav{
     content: '';
     width: 0%;
     height: 2px;
-    background: #7ed957;
+    background: var(--SGBUS-green);
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -70,7 +81,7 @@ nav{
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #7ed957;
+    background-color: var(--SGBUS-green);
 }
 
 /*https://www.youtube.com/watch?v=flItyHiDm7E&ab_channel=WebDevTutorials*/
@@ -93,7 +104,7 @@ nav{
         top: 70px;
         gap: 0;
         flex-direction: column;
-        background-color: #00004d;
+        background-color: var(--Federal-blue);
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -109,7 +120,7 @@ nav{
 }
 .text-box{
     flex: 1;
-    color:#fff;
+    color:var(--White);
     text-align: left;
     padding-left: 5%;
     /*
@@ -133,7 +144,7 @@ nav{
      font-style: normal;
     margin: 10px 0 40px;
     font-size: 14px;
-    color:#fff;
+    color: var(--White);
 }
 
 .image{
@@ -149,18 +160,18 @@ img{
 .login-button{
     display: inline-block;
     text-decoration: none;
-    color: #00004d;
-    border: 2px solid #fff;
+    color: var(--Federal-blue);
+    border: 2px solid var(--White);
     padding: 12px 34px;
     font-size: 16px;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background: #7ed957;
+    background: var(--SGBUS-green);
     position: relative;
     cursor: pointer;
 }
 .login-button:hover{
-    background-color: #fff;
+    background-color: var(--White);
     transition: 0.7s;
 }

@@ -45,7 +45,7 @@
   }
   
   .lessonPlanContainer {
-    background-color: #f9f9f9; /* Example background color */
+    background-color: var(--White-smoke); /* Example background color */
     padding: 20px; /* Padding around content */
     /* This column will automatically take the third column due to grid layout */
   }
@@ -79,14 +79,6 @@ input {
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-}
- 
-.btn {
-    padding: 10px 1rem;
-    background: #334;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
 }
  
 .todo-content {
