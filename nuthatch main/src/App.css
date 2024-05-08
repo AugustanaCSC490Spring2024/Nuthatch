@@ -67,6 +67,7 @@ background: var(--Federal-blue) !important;
 .btn3{
   background: var(--White) !important;
   margin-bottom: 5px;
+  margin-right: 15px !important;
   width: fit-content !important;
   border: 1px solid var(--SGBUS-green);
   padding: 2px 3px !important;

@@ -113,9 +113,13 @@ input {
   color: var(--White);
 }
 
-.TextViewList{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
+.TextViewList li {
+  display: block;
+  list-style-type: none;
+  margin-bottom: 10px;
+  list-style-type: none;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 20px;
 }
 
