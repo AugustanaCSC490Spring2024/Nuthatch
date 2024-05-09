@@ -106,7 +106,9 @@ input {
 }
 
 .TextViewList li {
-  display: block;
+  color: var(--White);
+  display:  flex;
+  white-space: nowrap;
   list-style-type: none;
   margin-bottom: 10px;
   list-style-type: none;

@@ -41,12 +41,15 @@ const SearchComponent = (props) => {
         {isImageView ? 'Image' : 'Text'}
       </button>
       <div className= 'gridContainer'>
-        <div className='cardContainer'>
-          {isImageView ? (
-              filteredData.map(drillInfo => (
-                
-                <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
-              ))) : (
+      {isImageView? (
+            <div className='cardContainer'>
+              {filteredData.map(drillInfo => {
+                return (
+                  <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
+                );
+              })}
+              </div>
+              ) : (
                 <ul class = "TextViewList">
                 {filteredData.map(item => (
                   <li key={item.CODE}><button className="btn3" onClick={() => props.addCardToLessonFunction(item.CODE)}>Add</button> {item.CODE}: {item.Title}  </li>
@@ -58,7 +61,6 @@ const SearchComponent = (props) => {
         {}
         </ul>
           {}
-        </div>
 
       </div>
 
