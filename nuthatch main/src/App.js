@@ -1,11 +1,8 @@
 import './App.css';
-import LessonCreator from './components/LessonCreator.js';
-import LessonContainer from './components/LessonContainer.js';
 import SignIn from './components/auth/SignIn.jsx';
 import SignUp from './components/auth/SignUp.jsx';
 import ProgramInput from './components/auth/ProgramInput.jsx';
 import DropDown from './components/auth/DropDown.jsx';
-import AuthDetails from './components/AuthDetails';
 import Home from './pages/home.js';
 import About from './pages/about.js';
 import Contact from './pages/contact.js';
@@ -13,11 +10,9 @@ import Search from './pages/search.js';
 import LessonView from './components/LessonView.js';
 import Navbar from './components/Navbar.js';
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { set } from 'firebase/database';
-import db, { auth } from './firebase.js';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { auth } from './firebase.js';
 import { usePapaParse } from 'react-papaparse';
-import { collection, getDocs, addDoc, query, where, doc, onSnapshot } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
 import { setListOfDrills } from './drillDB.js';
 

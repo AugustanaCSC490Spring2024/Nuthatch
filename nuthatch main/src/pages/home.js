@@ -16,16 +16,16 @@ function Home(props){
                 <button class="btn2">
                     <Link className="noEffects" to="/signup">Sign Up</Link>
                 </button>
+                <div class="buttons">
+                    {/* <a href='https://docs.stripe.com/terminal/references/testing'>Fake Cards</a>  */}
+                    <button class="btn1" onClick={() => subscribeFree()}>Free Subscription</button>
+                    <button class="btn1" onClick={() => subscribeMain()}>Main Subscription</button>
+                    <button class="btn1" onClick={() => subscribePremiumTier()}>Premium Subscription</button>
+                </div>
             </div>
             <div class="image">
                 <img src={gymnast} alt="gymnastics logo"></img>
             </div>
-            {/* <div class="buttons"> */}
-                {/* <a href='https://docs.stripe.com/terminal/references/testing'>Fake Cards</a>  */}
-                {/* <button class="btn1" onClick={() => subscribeFree()}>Free Subscription</button> */}
-                {/* <button class="btn1" onClick={() => subscribeMain()}>Main Subscription</button> */}
-                {/* <button class="btn1" onClick={() => subscribePremiumTier()}>Premium Subscription</button> */}
-            {/* </div> */}
         </div>
           
     );
