@@ -17,7 +17,8 @@
 }
 
 ul {
-    list-style: cartwheel;
+    list-style: none;
+    /* list-style: cartwheel; */
 }
 
 li {
