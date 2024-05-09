@@ -40,6 +40,9 @@
     grid-template-columns: 1fr 1fr; /* Two columns for cards */
     gap: 16px;
     font-size: 16px;
+    white-space: nowrap;
+
+
     text-align: center;
     color: var(--White);
   }
