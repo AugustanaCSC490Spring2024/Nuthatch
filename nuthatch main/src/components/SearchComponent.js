@@ -9,7 +9,7 @@ import { getCardsBySearch } from '../drillDB';
 const SearchComponent = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState(props.data);
-    const [isImageView, setisImageView] = useState(false);
+    const [isImageView, setisImageView] = useState(true);
 
     const handleChange = () => {
       setisImageView(!isImageView);
