@@ -31,7 +31,6 @@ async function addFullFilePaths(data) {
     return Promise.all(newData);
   }
 
-
 function App() {
   const [csvData, setCSVData] = useState([]);
 

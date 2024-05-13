@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import '../App.css';
 import "../styles/Navbar.css";
+import { auth } from '../firebase.js';
+
 function Navbar() {
   return (
     
@@ -12,22 +14,22 @@ function Navbar() {
                     <li class="nav-item">
                       <NavLink to="/">HOME</NavLink>
                     </li>
-                    <li class="nav-item">
-                      <NavLink to="/search">SEARCH</NavLink>
-                    </li>
-                    <li class="nav-item">
-                      <NavLink to="/lessonview">LESSONS</NavLink>
-                    </li>
+                    {auth.currentUser && (
+                      <li class="nav-item">
+                        <NavLink to="/search">SEARCH</NavLink>
+                      </li> 
+                    )}
+                    {auth.currentUser && (
+                      <li class="nav-item">
+                        <NavLink to="/lessonview">LESSONS</NavLink>
+                      </li>
+                    )}
                     <li class="nav-item">
                       <NavLink to="/about">ABOUT</NavLink>
                     </li>
                     <li class="nav-item">
                       <NavLink to="/contact">CONTACT</NavLink>
-                    </li>
-                    <li class="nav-item">
-                      <NavLink to="/account">ACCOUNT</NavLink>
-                    </li>
-                  
+                    </li>                  
                 </ul>
             </div>
                 <div className = "hamburger">
