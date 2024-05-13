@@ -14,7 +14,8 @@ function SignUp(){
         createUserWithEmailAndPassword(auth,email, password)
         .then((userCredential) => {
             console.log(userCredential);
-            alert('Sign-up successful can now log in');
+            // alert('Sign-up successful can now log in');
+            window.location.href = '/';
         })
         .catch((error) => {
             console.log(error);

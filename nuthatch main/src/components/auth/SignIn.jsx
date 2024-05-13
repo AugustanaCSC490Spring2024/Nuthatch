@@ -16,7 +16,8 @@ function SignIn(){
         signInWithEmailAndPassword(auth,email, password)
         .then((userCredential) => {
             console.log(userCredential);
-            alert('Sign-in successful');
+            // alert('Sign-in successful');
+            window.location.href = '/';
         })
         
         .catch((error) => {

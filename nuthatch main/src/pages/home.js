@@ -24,9 +24,16 @@ function Home(props){
                 }
                 <div class="buttons">
                     {/* <a href='https://docs.stripe.com/terminal/references/testing'>Fake Cards</a>  */}
+                    {auth.currentUser && (
                     <button class="btn1" onClick={() => subscribeFree()}>Free Subscription</button>
+                    )}
+                    {auth.currentUser && (
                     <button class="btn1" onClick={() => subscribeMain()}>Main Subscription</button>
+                    )}
+                    {auth.currentUser && (
                     <button class="btn1" onClick={() => subscribePremiumTier()}>Premium Subscription</button>
+                    )}
+
                 </div>
             </div>
             <div class="image">
