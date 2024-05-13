@@ -20,7 +20,7 @@ function Home(props){
                         <Link className="noEffects" to="/signup">Sign Up</Link>
                     </button>
                     </div>) :
-                    (<button class="btn1" onClick={() => signOut()}>Sign Out</button>)
+                    (<button class="btn2" onClick={() => signOut()}>Sign Out</button>)
                 }
                 <div class="buttons">
                     {/* <a href='https://docs.stripe.com/terminal/references/testing'>Fake Cards</a>  */}
