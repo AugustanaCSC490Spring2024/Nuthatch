@@ -36,15 +36,19 @@
   
   .cardContainer {
     grid-column: span 2; /* Spans over the first two columns */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for cards */
+    display: contents;
     gap: 16px;
     font-size: 16px;
     white-space: nowrap;
-
-
     text-align: center;
     color: var(--White);
+  }
+
+  @media screen and (max-width: 850px) {
+    .gridContainer {
+      grid-template-columns: 1fr; /* Adjust sizes as needed */
+    }
+    
   }
   
   .lessonPlanContainer {
