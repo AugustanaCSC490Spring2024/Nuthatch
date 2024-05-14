@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
 import "../styles/Search.css";
 import "../styles/TextCardView.css";
@@ -8,9 +8,13 @@ import { getCardsBySearch } from '../drillDB';
 
 const SearchComponent = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [filteredData, setFilteredData] = useState(props.data);
+    const [filteredData, setFilteredData] = useState([]);
     const [isImageView, setisImageView] = useState(true);
 
+    useEffect(() => { 
+      setFilteredData(props.drillLibrary);
+    }, [props.drillLibrary]);
+    
     const handleChange = () => {
       setisImageView(!isImageView);
     };

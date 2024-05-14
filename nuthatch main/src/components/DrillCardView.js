@@ -9,7 +9,9 @@ const DrillCardView = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
 	
 	return (
-		<div className="card-view">
+		props.cardItem == null ? 
+			(<div></div>) :
+			(<div className="card-view">
 
 					<motion.div 
 						transition={{layout: {duration: 1, type: "spring" }}} 
@@ -43,7 +45,7 @@ const DrillCardView = (props) => {
 					</div>
 			</motion.div>
 		</div>
-	);
+	));
 };
 
 export default DrillCardView;

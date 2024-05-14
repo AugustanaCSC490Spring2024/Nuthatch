@@ -1,6 +1,7 @@
 import "../App.css";
 import React, { useState, useEffect } from 'react';
 import { getLessonsFromFirestore } from "../firestoreFunctions";
+import { auth } from "../firebase";
 
 const LessonView = (props) => { 
   const [lessons, setLessons] = useState([]);
@@ -12,8 +13,10 @@ const LessonView = (props) => {
       const theLessons = await getLessonsFromFirestore();
       setLessons(theLessons);
     };
-    fetchLessons();
-  }, []);
+    if (auth.currentUser) {
+      fetchLessons();
+    }
+  }, [props.isSignedIn]);
 
 
 

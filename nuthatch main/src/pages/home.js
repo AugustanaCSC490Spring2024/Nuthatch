@@ -40,7 +40,6 @@ function Home(props){
                 <img src={gymnast} alt="gymnastics dancer"></img>
             </div>
         </div>
-          
     );
 };
  

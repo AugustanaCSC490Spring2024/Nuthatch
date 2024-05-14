@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
 import "../styles/Search.css";
 import { useState } from 'react';
+import { useParams } from "react-router-dom";
+
 import SearchComponent from '../components/SearchComponent';
 import Lesson from "../components/Lesson";
+import {getLessonFromFirestoreByID} from '../firestoreFunctions';
+import {auth} from '../firebase';
 
 const Search = (props) => {
-  const [currentLesson, setCurrentLesson] = useState({'title': 'Untitled Lesson', 'description':"not done yet", 'drillCodes':['S1', 'S30']});
+  const [currentLesson, setCurrentLesson] = useState({'title': 'Untitled Lesson', 'description':"not done yet", 'drillCodes':[]});
 
   const addCardToLesson = function (cardCode) {
     if (currentLesson.drillCodes.includes(cardCode)) {
@@ -28,10 +32,26 @@ const Search = (props) => {
     setCurrentLesson(newLesson);
   }
 
+  const {lessonID} = useParams();
+
+  useEffect(() => {
+    // Load lesson from firestore
+    async function fetchLesson() {
+      const theLesson = await getLessonFromFirestoreByID(lessonID);
+      console.log("Lesson with ID: ", lessonID, " = ", JSON.stringify(theLesson));
+      
+      setCurrentLesson(theLesson);
+    };
+    if (lessonID && auth.currentUser) {
+      fetchLesson();
+    }
+  }, [lessonID]);
+
   return (
     <div class= 'grid-container'>
+      <h1>LESSON ID: {lessonID}</h1>
     <div class='lesson-editor'>
-      <div class="search-component"><SearchComponent data={props.data} addCardToLessonFunction={addCardToLesson}/> </div>
+      <div class="search-component"><SearchComponent drillLibrary={props.drillLibrary} addCardToLessonFunction={addCardToLesson}/> </div>
       <div class="lesson-component"> <Lesson lesson = {currentLesson} removeCardFromLesson = {removeCardFromLesson}/> </div>
     </div>
     {/* DEBUG <div> <p style={{'color':'white'}}>{JSON.stringify(currentLesson)}</p> </div> */}

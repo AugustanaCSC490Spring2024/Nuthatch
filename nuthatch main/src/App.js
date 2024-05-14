@@ -15,6 +15,7 @@ import { auth } from './firebase.js';
 import { usePapaParse } from 'react-papaparse';
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
 import { setListOfDrills } from './drillDB.js';
+import { onAuthStateChanged } from 'firebase/auth';
 
 
 async function addFullFilePaths(data) {
@@ -33,8 +34,18 @@ async function addFullFilePaths(data) {
 
 function App() {
   const [csvData, setCSVData] = useState([]);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   const { readString } = usePapaParse();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsSignedIn(true);
+      } else {
+        setIsSignedIn(false);
+      }
+    })},[]);
 
   useEffect(() => {
     const fetchData = async () => { 
@@ -72,8 +83,9 @@ function App() {
           <Route path='/programinput' element={<ProgramInput />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/search' element={<Search data={csvData} />} />
-          <Route path='/lessonview' element={<LessonView data={csvData} />} />
+          <Route path='/search' element={<Search drillLibrary={csvData} isSignedIn={isSignedIn} />} />  
+          <Route path='/search/:lessonID' element={<Search drillLibrary={csvData} isSignedIn={isSignedIn} />} />  
+          <Route path='/lessonview' element={<LessonView drillLibrary={csvData} isSignedIn={isSignedIn} />} />
           <Route path='/dropdown' element={<DropDown />} />
         </Routes>
       </Router>
