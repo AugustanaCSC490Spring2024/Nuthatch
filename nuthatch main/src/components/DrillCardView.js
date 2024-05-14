@@ -21,7 +21,7 @@ const DrillCardView = (props) => {
 						}}
 						>
 							<motion.h2 layout= "position">{cardItem.Title}</motion.h2>
-							<img className="thumbnail" src={cardItem.thumbnailURL} />
+							<img className="thumbnail" src={cardItem.thumbnailURL} alt={cardItem.Title}/>
 							{isOpen && ( 
 						<motion.div
 								initial={{ opacity: 0}}
