@@ -3,12 +3,13 @@ import { NavLink } from "react-router-dom";
 import '../App.css';
 import "../styles/Navbar.css";
 import { auth } from '../firebase.js';
+import logo from "../Images/gymProfLogo.png";
 
 function Navbar() {
   return (
     
         <nav>
-            <h3 className="title-text">Gymnastics</h3>
+            <img src={logo} alt="GymProf Logo" class="logo"></img>
             <div class="nav-links">
                 <ul class="nav-menu">
                     <li class="nav-item">
