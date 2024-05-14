@@ -1,5 +1,6 @@
 import React from "react";
 import {useState} from "react";
+import "../styles/Contact.css";
 
 function Contact(props){
     const [input, setInputs] = useState({});
@@ -16,7 +17,10 @@ function Contact(props){
     }
 
     return (
+        <div className = "formBox">
+        <h1>Contact Us</h1>
         <form onSubmit={handleSubmit}>
+            <div class="name">
             <label>Enter your name:
             <input
                 type="text"
@@ -25,7 +29,9 @@ function Contact(props){
                 onChange={handleChange}
             />
             </label>
-            <label>Enter your phone email:
+            </div>
+            <div class="email">
+            <label>Enter your email:
                 <input 
                     type="text"
                     name="client_email"
@@ -33,6 +39,8 @@ function Contact(props){
                     onChange={handleChange}
                 />
             </label>
+            </div>
+            <div class="comment">
             <label>Comment:
                 <input
                     type="text"
@@ -41,8 +49,10 @@ function Contact(props){
                     onChange={handleChange}
                 />
             </label>
+            </div>
             <input type= "submit"/>
         </form>
+        </div>
     )
 }
 
