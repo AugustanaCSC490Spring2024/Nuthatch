@@ -1,13 +1,15 @@
 :root{
   --Federal-blue: #00004d;
-  --Imperial-red: #f5424a;
-  --Green-blue: #2169ac;
-  --White-smoke: #f5f5f5;
-  --Light-sky-blue: #89ccff;
-  --SGBUS-green: #73d957;
-  --White: #fff;
-  --black: #000;
+    --Imperial-red: #f5424a;
+    --Green-blue: #2169ac;
+    --White-smoke: #f5f5f5;
+    --Light-sky-blue: #89ccff;
+    --SGBUS-green: #73d957;
+    --White: #fff;
+    --primary-font-family: "Assistant", sans-serif;
+    --second-font-family: "Lato", sans-serif;
 }
+
 
 *{
   margin: 0;
@@ -18,6 +20,13 @@
 a {
   text-decoration: none !important;
   color: var(--White) !important;
+}
+
+.user-container{
+  background-color: var(--White);
+  font-family: var(--second-font-family);
+  color: var(--Federal-blue);
+  font-size: 18px;
 }
 
 .header{
