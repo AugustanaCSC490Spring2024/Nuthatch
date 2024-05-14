@@ -38,11 +38,19 @@
   margin: 40px 0px;
   font-size: 14px;
   color: var(--White);
+  padding: 0px 10px;
 }
 
 .image{
   flex: 1;
   text-align: center;
+}
+
+@media screen and (max-width: 1020px) {
+  .image{
+    display: none;
+  }
+  
 }
 
 img{

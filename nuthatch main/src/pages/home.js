@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import gymnast from './0.png'
+import gymnast from "../Images/gymnast.png";
 import "../styles/Home.css";
 import { subscribeFree, subscribeMain, subscribePremiumTier } from "../subscribe.js";
 import { auth, signOut } from "../firebase.js"
@@ -37,7 +37,7 @@ function Home(props){
                 </div>
             </div>
             <div class="image">
-                <img src={gymnast} alt="gymnastics logo"></img>
+                <img src={gymnast} alt="gymnastics dancer"></img>
             </div>
         </div>
           
