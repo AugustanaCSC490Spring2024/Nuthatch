@@ -1,12 +1,15 @@
 import { db, auth } from "./firebase";
-import { collection, addDoc, getDoc, doc, getDocs } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 
 async function saveLessonToFirestore(lesson) {
   console.log("Saving lesson to Firestore");
   console.log(JSON.stringify(lesson));
-
   const collectionRef = collection(db, "userdata", auth.currentUser.uid, "lessons");
+
+
+  //not being used
+
   // console.log(JSON.stringify(collectionRef));
   const docRef = await addDoc(collectionRef, {
     title: lesson.title,

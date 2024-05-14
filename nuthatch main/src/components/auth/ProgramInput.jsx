@@ -1,13 +1,9 @@
-import { signInWithEmailAndPassword } from "firebase/auth"; 
 import React, { useState } from 'react';
-import { auth } from "../../firebase";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from'react-bootstrap/Button';
 import { Dropdown } from 'react-bootstrap';
-import email_icon from './Assets/email.png';
-import password_icon from './Assets/password.png';
 
 const ProgramInput = () => {
     const [selected_languages, set_Selected_languages] =  

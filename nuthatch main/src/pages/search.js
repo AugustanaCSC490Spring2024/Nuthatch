@@ -1,8 +1,7 @@
 import React from "react";
 import "../App.css";
 import "../styles/Search.css";
-import { useState, useEffect } from 'react';
-import DrillCardView from '../components/DrillCardView';
+import { useState } from 'react';
 import SearchComponent from '../components/SearchComponent';
 import Lesson from "../components/Lesson";
 
