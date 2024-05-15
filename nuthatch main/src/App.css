@@ -8,6 +8,7 @@
     --White: #fff;
     --primary-font-family: "Assistant", sans-serif;
     --second-font-family: "Lato", sans-serif;
+    --black: #000;
 }
 
 
@@ -58,6 +59,10 @@ a {
 background: var(--SGBUS-green) !important;
 }
 
+.btn1:active{
+  transform: translateY(2px); 
+}
+
 /* -----------Green Button---------------- */
 .btn2{
   background: var(--SGBUS-green) !important;
@@ -77,6 +82,10 @@ background: var(--SGBUS-green) !important;
 background: var(--Federal-blue) !important;
 } */
 
+.btn2:active{
+  transform: translateY(2px); 
+}
+
 /* -----------White Button---------------- */
 .btn3{
   background: var(--White) !important;
@@ -95,6 +104,10 @@ background: var(--Federal-blue) !important;
 
 .btn3:hover{
 background: var(--SGBUS-green) !important;
+}
+
+.btn3:active{
+  transform: translateY(2px); 
 }
 
 @media screen and (max-width: 768px){
