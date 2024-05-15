@@ -1,5 +1,5 @@
 import { db, auth } from "./firebase";
-import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, getDoc, doc, setDoc, deleteDoc } from "firebase/firestore";
 
 export async function saveLessonToFirestore(lessonID, lesson) {
   console.log("Saving lesson to Firestore");
@@ -20,6 +20,12 @@ export async function createLessonInFirestore() {
   console.log("Document written with ID: ", docRef.id);
   console.log("Created Lesson: ", lesson);
   return {id: docRef.id, ...lesson};
+}
+
+export async function deleteLessonFromFirestore(lessonID) {
+  console.log("Deleting lesson from Firestore");
+  const docRef = doc(db, "userdata", auth.currentUser.uid, "lessons", lessonID);
+  await deleteDoc(docRef);
 }
 
 

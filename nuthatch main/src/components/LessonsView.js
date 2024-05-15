@@ -2,7 +2,7 @@ import "../App.css";
 import React, { useState, useEffect } from 'react';
 import Select from "react-select";
 
-import { getLessonsFromFirestore, createLessonInFirestore } from "../firestoreFunctions";
+import { getLessonsFromFirestore, createLessonInFirestore, deleteLessonFromFirestore } from "../firestoreFunctions";
 import { auth } from "../firebase";
 
 
@@ -22,13 +22,21 @@ const LessonsView = (props) => {
   }
 
   async function editLesson() {
-    console.log("Lesson index: ", selectedLessonIndex);
-    console.log("Lesson: ", lessons);
+    // console.log("Lesson index: ", selectedLessonIndex);
+    // console.log("Lesson: ", lessons);
     const lesson = lessons[selectedLessonIndex];
     console.log("Editing lesson: ", lesson);
 
     const url = "/search/" + lesson.id;
     window.location.assign(url);
+  }
+
+  async function deleteLesson() {
+    // console.log("Lesson index: ", selectedLessonIndex);
+    // console.log("Lesson: ", lessons);
+    const lesson = lessons[selectedLessonIndex];
+    console.log("Deleting lesson: ", lesson);
+    await deleteLessonFromFirestore(lesson.id);
   }
 
   useEffect(() => {  
@@ -44,8 +52,9 @@ const LessonsView = (props) => {
 
   return (
     <div class= 'container'>
-         <button class="btn2" onClick={addLesson}>Create Lesson</button>
-         <button class="btn2" onClick={editLesson}>Edit Lesson</button>
+        <button class="btn1" onClick={addLesson}>Create Lesson</button>
+        <button class="btn1" onClick={editLesson}>Edit Lesson</button>
+        <button class="btn2" onClick={deleteLesson}>Delete Lesson</button>
          <div>
         <Select  defaultValue={selectedLessonIndex}
                  onChange={({value, label}) => setSelectedLessonIndex(value)}

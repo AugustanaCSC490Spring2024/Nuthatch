@@ -14,11 +14,11 @@ function Navbar() {
                     <li class="nav-item">
                       <NavLink to="/">HOME</NavLink>
                     </li>
-                    {auth.currentUser && (
+                    {/* {auth.currentUser && (
                       <li class="nav-item">
                         <NavLink to="/search">SEARCH</NavLink>
                       </li> 
-                    )}
+                    )} */}
                     {auth.currentUser && (
                       <li class="nav-item">
                         <NavLink to="/lessonsview">LESSONS</NavLink>
