@@ -52,7 +52,7 @@ const Search = (props) => {
 
   return (
     <div class= 'grid-container'>
-      <h1>LESSON ID: {lessonID}</h1>
+      {/* <h1>LESSON ID: {lessonID}</h1> */}
     <div class='lesson-editor'>
       <div class="search-component"><SearchComponent drillLibrary={props.drillLibrary} addCardToLessonFunction={addCardToLesson}/> </div>
       <div class="lesson-component"> <Lesson lesson = {currentLesson} removeCardFromLesson = {removeCardFromLesson}/> </div>

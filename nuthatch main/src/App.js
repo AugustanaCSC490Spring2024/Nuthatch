@@ -90,9 +90,6 @@ function App() {
         </Routes>
       </Router>
     </div>
-    <div class="user-container">
-      <p>{auth.currentUser ? "Signed in as " + auth.currentUser.email : "Not signed in"} </p>
-      </div>
     </section>
   );
 }

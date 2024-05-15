@@ -12,7 +12,7 @@ const Lesson = (props) => {
 
     return (
         <div className="lesson">
-            <p>ID: {JSON.stringify(lessonID)}</p>
+            {/* <p>ID: {JSON.stringify(lessonID)}</p> */}
             <div className='text-container'>
                 <h2>{props.lesson.title}</h2>
                 <p>{props.lesson.description}</p>

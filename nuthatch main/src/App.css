@@ -23,12 +23,6 @@ a {
   color: var(--White) !important;
 }
 
-.user-container{
-  background-color: var(--White);
-  font-family: var(--second-font-family);
-  color: var(--Federal-blue);
-  font-size: 18px;
-}
 
 .header{
   min-height: 100vh;
