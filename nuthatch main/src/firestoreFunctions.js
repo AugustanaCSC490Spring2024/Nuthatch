@@ -1,26 +1,24 @@
 import { db, auth } from "./firebase";
-import { collection, addDoc, getDocs, getDoc, doc } from "firebase/firestore";
+import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
 
-
-async function saveLessonToFirestore(lesson) {
+async function saveLessonToFirestore(lessonID, lesson) {
   console.log("Saving lesson to Firestore");
   console.log(JSON.stringify(lesson));
+  
+  const docRef = doc(db, "userdata", auth.currentUser.uid, "lessons", lessonID);
+
+  await setDoc(docRef, lesson);
+}
+
+async function createLessonInFirestore() {
+  console.log("Creating lesson in Firestore");
+ 
+  const lesson = {'title': 'Untitled Lesson', 'description':"", 'drillCodes':[]}
   const collectionRef = collection(db, "userdata", auth.currentUser.uid, "lessons");
 
-
-  //not being used
-
-  // console.log(JSON.stringify(collectionRef));
-  const docRef = await addDoc(collectionRef, {
-    title: lesson.title,
-    description: lesson.description,
-    drillCodes: lesson.drillCodes
-  });
-
-  // const docRef = await getDoc(doc(db, "products", "prod_PzSYI74e70odTs"));
-  // console.log(JSON.stringify(docRef.data()));
-
+  await addDoc(collectionRef, lesson);
 }
+
 
 async function getLessonsFromFirestore() {
   console.log("Getting lessons from Firestore");

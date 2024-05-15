@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 import SearchComponent from '../components/SearchComponent';
 import Lesson from "../components/Lesson";
-import {getLessonFromFirestoreByID} from '../firestoreFunctions';
+import {getLessonFromFirestoreByID, saveLessonToFirestore} from '../firestoreFunctions';
 import {auth} from '../firebase';
 
 const Search = (props) => {
@@ -21,6 +21,7 @@ const Search = (props) => {
       const newLesson = {...currentLesson, drillCodes:newDrillCodes}
       console.log(JSON.stringify(newLesson));
       setCurrentLesson(newLesson);
+      saveLessonToFirestore(lessonID, newLesson)
     }
   }
 
@@ -30,6 +31,7 @@ const Search = (props) => {
     const newLesson = {...currentLesson, drillCodes:newDrillCodes}
     console.log(JSON.stringify(newLesson));
     setCurrentLesson(newLesson);
+    saveLessonToFirestore(lessonID, newLesson)
   }
 
   const {lessonID} = useParams();
@@ -43,9 +45,10 @@ const Search = (props) => {
       setCurrentLesson(theLesson);
     };
     if (lessonID && auth.currentUser) {
+      console.log("about to fetch lesson")
       fetchLesson();
     }
-  }, [lessonID]);
+  }, [props.isSignedIn, lessonID]);
 
   return (
     <div class= 'grid-container'>
