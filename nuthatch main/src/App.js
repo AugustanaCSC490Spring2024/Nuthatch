@@ -7,7 +7,7 @@ import Home from './pages/home.js';
 import About from './pages/about.js';
 import Contact from './pages/contact.js';
 import Search from './pages/search.js';
-import LessonView from './components/LessonView.js';
+import LessonsView from './components/LessonsView.js';
 import Navbar from './components/Navbar.js';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -85,7 +85,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/search' element={<Search drillLibrary={csvData} isSignedIn={isSignedIn} />} />  
           <Route path='/search/:lessonID' element={<Search drillLibrary={csvData} isSignedIn={isSignedIn} />} />  
-          <Route path='/lessonview' element={<LessonView drillLibrary={csvData} isSignedIn={isSignedIn} />} />
+          <Route path='/lessonsview' element={<LessonsView drillLibrary={csvData} isSignedIn={isSignedIn} />} />
           <Route path='/dropdown' element={<DropDown />} />
         </Routes>
       </Router>

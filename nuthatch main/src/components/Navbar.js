@@ -21,7 +21,7 @@ function Navbar() {
                     )}
                     {auth.currentUser && (
                       <li class="nav-item">
-                        <NavLink to="/lessonview">LESSONS</NavLink>
+                        <NavLink to="/lessonsview">LESSONS</NavLink>
                       </li>
                     )}
                     <li class="nav-item">

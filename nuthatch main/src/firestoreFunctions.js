@@ -1,7 +1,7 @@
 import { db, auth } from "./firebase";
 import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
 
-async function saveLessonToFirestore(lessonID, lesson) {
+export async function saveLessonToFirestore(lessonID, lesson) {
   console.log("Saving lesson to Firestore");
   console.log(JSON.stringify(lesson));
   
@@ -10,17 +10,20 @@ async function saveLessonToFirestore(lessonID, lesson) {
   await setDoc(docRef, lesson);
 }
 
-async function createLessonInFirestore() {
+export async function createLessonInFirestore() {
   console.log("Creating lesson in Firestore");
  
   const lesson = {'title': 'Untitled Lesson', 'description':"", 'drillCodes':[]}
   const collectionRef = collection(db, "userdata", auth.currentUser.uid, "lessons");
 
-  await addDoc(collectionRef, lesson);
+  const docRef = await addDoc(collectionRef, lesson);
+  console.log("Document written with ID: ", docRef.id);
+  console.log("Created Lesson: ", lesson);
+  return {id: docRef.id, ...lesson};
 }
 
 
-async function getLessonsFromFirestore() {
+export async function getLessonsFromFirestore() {
   console.log("Getting lessons from Firestore");
   if (!auth.currentUser) {
     console.log("Not signed in");
@@ -54,5 +57,3 @@ export async function getLessonFromFirestoreByID(lessonID) {
 
 
 }
-
-export { saveLessonToFirestore, getLessonsFromFirestore };
