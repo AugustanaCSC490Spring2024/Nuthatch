@@ -18,19 +18,15 @@ const Lesson = (props) => {
                 <h1 class="lessonTitle">{props.lesson.title}</h1>
                 <input 
                 placeholder="Change Title"
-                onChange={(e) => {
-                    props.lesson.title = e.target.value;
-                    saveLessonToFirestore(lessonID, props.lesson);
-                }} 
+                value={props.lesson.title}
+                onChange={(e) => { props.setTitleHandler(e.target.value);}} 
                 ></input>
                 <h2>Description</h2>
                 <p>{props.lesson.description}</p>
                 <input
+                value={props.lesson.description}
                 placeholder="Change Description"
-                onChange={(e) => {
-                    props.lesson.description = e.target.value;
-                    saveLessonToFirestore(lessonID, props.lesson);
-                }}
+                onChange={(e) => { props.setDescriptionHandler(e.target.value);}} 
                 ></input>
                 {/* no longer needed */}
                 {/* <button class="btn1" onClick={() => saveLessonToFirestore(lessonID, props.lesson)}>Save Lesson</button> */}

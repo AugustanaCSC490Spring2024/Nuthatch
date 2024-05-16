@@ -34,6 +34,18 @@ const Search = (props) => {
     saveLessonToFirestore(lessonID, newLesson)
   }
 
+  const setTitleHandler = function (newTitle) {
+    const newLesson = {...currentLesson, title:newTitle}
+    setCurrentLesson(newLesson);
+    saveLessonToFirestore(lessonID, newLesson)
+  }
+
+  const setDescriptionHandler = function (newDescription) {
+    const newLesson = {...currentLesson, description:newDescription}
+    setCurrentLesson(newLesson);
+    saveLessonToFirestore(lessonID, newLesson)
+  }
+
   const {lessonID} = useParams();
 
   useEffect(() => {
@@ -55,7 +67,7 @@ const Search = (props) => {
       {/* <h1>LESSON ID: {lessonID}</h1> */}
     <div class='lesson-editor'>
       <div class="search-component"><SearchComponent drillLibrary={props.drillLibrary} addCardToLessonFunction={addCardToLesson}/> </div>
-      <div class="lesson-component"> <Lesson lesson = {currentLesson} removeCardFromLesson = {removeCardFromLesson}/> </div>
+      <div class="lesson-component"> <Lesson lesson = {currentLesson} removeCardFromLesson={removeCardFromLesson} setTitleHandler={setTitleHandler} setDescriptionHandler={setDescriptionHandler} /> </div>
     </div>
     {/* DEBUG <div> <p style={{'color':'white'}}>{JSON.stringify(currentLesson)}</p> </div> */}
     </div>
