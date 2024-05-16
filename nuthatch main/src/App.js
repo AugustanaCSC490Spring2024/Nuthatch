@@ -7,8 +7,10 @@ import Home from './pages/home.js';
 import About from './pages/about.js';
 import Contact from './pages/contact.js';
 import Search from './pages/search.js';
+import Print from './pages/print.js';
 import LessonsView from './components/LessonsView.js';
-import Navbar from './components/Navbar.js';
+import WithNav from './components/WithNav.js';
+import WithoutNav from './components/WithoutNav.js';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { auth } from './firebase.js';
@@ -75,9 +77,9 @@ function App() {
     <section class="header">
     <div className="App">
       <Router>
-        <Navbar/>
         <Routes>
-          <Route path="/" element={<Home data={csvData} />} />
+        <Route element={<WithNav />}>
+          <Route path="/" element={<Home/>} />
           <Route path="/signin" element={<SignIn /> } />
           <Route path="/signup" element={<SignUp />} />
           <Route path='/programinput' element={<ProgramInput />} />
@@ -87,6 +89,11 @@ function App() {
           <Route path='/search/:lessonID' element={<Search drillLibrary={csvData} isSignedIn={isSignedIn} />} />  
           <Route path='/lessonsview' element={<LessonsView drillLibrary={csvData} isSignedIn={isSignedIn} />} />
           <Route path='/dropdown' element={<DropDown />} />
+        </Route>
+        <Route element={<WithoutNav />}>
+          <Route path='/print/:lessonID' element={<Print drillLibrary={csvData} isSignedIn={isSignedIn}/>} />
+        </Route>
+
         </Routes>
       </Router>
     </div>
