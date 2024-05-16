@@ -86,24 +86,22 @@
   margin-top: 2rem;
 }
 
-.toggle-button {
-  padding: 10px 20px;
-  border-radius: 4px;
-  background-color: var(--White);
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+.toggle-button{
+  background: var(--Federal-blue) !important;
+  margin: 20px 10px !important;
+  width: fit-content !important;
+  border: 1px solid var(--SGBUS-green);
+  padding: 14px 50px !important;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font: var(--primary-font-family);
+  font-size: 20px;
+  color: var(--White) !important;
   transition: background-color 0.3s ease;
 }
 
-.toggle-button.image {
-  background-color: var(--SGBUS-green);
-  color: var(--White);
-}
-
-.toggle-button.text {
-  background-color: var(--Imperial-red);
-  color: var(--White);
+.toggle-button:active{
+  transform: translateY(2px); 
 }
 
 .TextViewList li {
