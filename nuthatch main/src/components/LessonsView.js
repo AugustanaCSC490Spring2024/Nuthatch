@@ -39,6 +39,18 @@ const LessonsView = (props) => {
     await deleteLessonFromFirestore(lesson.id);
   }
 
+  async function printLesson() {
+    const lesson = lessons[selectedLessonIndex];
+    console.log("Printing lesson: ", lesson);
+    const openInNewTab = url => {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    };
+    const url = "/print/" + lesson.id;
+    openInNewTab(url);
+  }
+    
+
+
   useEffect(() => {  
     if (auth.currentUser) {
       fetchLessons();
@@ -54,6 +66,7 @@ const LessonsView = (props) => {
     <div class= 'container'>
         <button class="btn1" onClick={addLesson}>Create Lesson</button>
         <button class="btn1" onClick={editLesson}>Edit Lesson</button>
+        <button class="btn1" onClick={printLesson}>Print</button>
         <button class="btn2" onClick={deleteLesson}>Delete Lesson</button>
          <div>
         <Select  defaultValue={selectedLessonIndex}
@@ -61,6 +74,7 @@ const LessonsView = (props) => {
                  options={options}  
         />
          </div>
+
     </div>
   );
 };
