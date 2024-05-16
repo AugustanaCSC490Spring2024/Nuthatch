@@ -15,7 +15,7 @@ const Lesson = (props) => {
             {/* <p>ID: {JSON.stringify(lessonID)}</p> */}
             <div className='text-container'>
                 
-                <h2>{props.lesson.title}</h2>
+                <h1 class="lessonTitle">{props.lesson.title}</h1>
                 <input 
                 placeholder="Change Title"
                 onChange={(e) => {
@@ -23,6 +23,7 @@ const Lesson = (props) => {
                     saveLessonToFirestore(lessonID, props.lesson);
                 }} 
                 ></input>
+                <h2>Description</h2>
                 <p>{props.lesson.description}</p>
                 <input
                 placeholder="Change Description"

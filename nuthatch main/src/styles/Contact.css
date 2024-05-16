@@ -28,7 +28,3 @@ label{
   color: var(--White);
 }
 
-h1{
-  font-family: var(--second-font-family);
-  color: var(--SGBUS-green);
-}

@@ -10,6 +10,13 @@
     --second-font-family: "Lato", sans-serif;
 }
 
+.lessonTitle{
+    padding-top: 20px;
+    font-family: var(--second-font-family);
+    font-size: 40px;
+    font-weight: 525;
+
+}
 .lesson{
     text-align: center;
     font-family: var(--primary-font-family); 

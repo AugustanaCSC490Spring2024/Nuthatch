@@ -45,7 +45,7 @@ async function deleteLesson() {
     const lesson = lessons[selectedLessonIndex];
     console.log("Deleting lesson: ", lesson);
     await deleteLessonFromFirestore(lesson.id);
-    window.location.reload();     //works but not ideal
+    window.location.reload();                                                                      //works but not ideal
   } catch (error) {
     console.log("No lesson ID");
     alert("Please select a lesson to delete");
@@ -91,10 +91,10 @@ async function deleteLesson() {
         <button class="btn1" onClick={editLesson}>Edit Lesson</button>
         <button class="btn1" onClick={printLesson}>Print</button>
         <button class="btn2" onClick={deleteLesson}>Delete Lesson</button>
-         <div>
+         <div class= "dropDown">
         <Select  defaultValue={selectedLessonIndex}
-                 onChange={({value, label}) => setSelectedLessonIndex(value)}
-                 options={options}  
+                onChange={({value, label}) => setSelectedLessonIndex(value)}
+                options={options}  
         />
          </div>
 

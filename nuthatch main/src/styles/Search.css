@@ -74,13 +74,6 @@
   text-align: center;
 }
 
-input {
-  padding: 10px 25px;
-  margin-left: 10px;
-  border-radius: 50px;
-  width: 90%;
-  border: 3px solid var(--SGBUS-green);
-}
 
 .btn-container {
   display: flex;

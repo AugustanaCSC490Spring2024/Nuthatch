@@ -11,6 +11,10 @@
   --gray-color: #797979;
   
 }
+.TitleText{
+  font-family: var(--second-font-family);
+  color: var(--SGBUS-green);
+}
 
 .container{
   display: flex;
