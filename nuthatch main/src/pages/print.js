@@ -6,7 +6,7 @@ import {getLessonFromFirestoreByID} from '../firestoreFunctions';
 import {auth} from '../firebase';
 import PrintDrillCardView from "../components/PrintDrillCardView"; 
 import { getCardByCode } from '../drillDB';
-import { set } from "firebase/database";
+
 
 const Print = (props) => {
   const [currentLesson, setCurrentLesson] = useState({'title': 'Untitled Lesson', 'description':"not done yet", 'drillCodes':[]});
@@ -17,6 +17,7 @@ const Print = (props) => {
   useEffect(() => {
     // Load lesson from firestore
     async function fetchLesson() {
+        try{
         const theLesson = await getLessonFromFirestoreByID(lessonID);
         setCurrentLesson(theLesson);
         //group the cards (or IDs really) that are in the lesson by their event
@@ -26,6 +27,7 @@ const Print = (props) => {
             theLesson.drillCodes.forEach(async (drillCode) => {
                 const cardItem = getCardByCode(drillCode);
                 const event = cardItem.Event;
+                console.log(cardItem.Event);
                 if (!eventMap.has(event)) {
                     eventMap.set(event, []);
                 }
@@ -35,8 +37,12 @@ const Print = (props) => {
             // Now we have a map where each key is an event and the value is an array of cards for that event
             setEventToCardListMap(eventMap);
         };
+    
 
         groupCardsByEvent();
+        } catch (error) {
+            alert("No lesson Data")
+        }
     };
     if (lessonID && auth.currentUser && props.drillLibrary) {
       fetchLesson();
