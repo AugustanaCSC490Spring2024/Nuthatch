@@ -21,33 +21,53 @@ const LessonsView = (props) => {
     setLessons([...lessons, newLesson]);
   }
 
-  async function editLesson() {
-    // console.log("Lesson index: ", selectedLessonIndex);
-    // console.log("Lesson: ", lessons);
-    const lesson = lessons[selectedLessonIndex];
-    console.log("Editing lesson: ", lesson);
+async function editLesson() {
+  try {
+  // console.log("Lesson index: ", selectedLessonIndex);
+  // console.log("Lesson: ", lessons);
+  const lesson = lessons[selectedLessonIndex];
+  console.log("Editing lesson: ", lesson);
 
-    const url = "/search/" + lesson.id;
-    window.location.assign(url);
+  const url = "/search/" + lesson.id;
+  window.location.assign(url);
+  } catch (error) {
+    console.log("No lesson ID");
+    alert("Please select a lesson to edit");
+    return;
   }
+}
 
-  async function deleteLesson() {
+async function deleteLesson() {
+  try {
     // console.log("Lesson index: ", selectedLessonIndex);
     // console.log("Lesson: ", lessons);
     const lesson = lessons[selectedLessonIndex];
     console.log("Deleting lesson: ", lesson);
     await deleteLessonFromFirestore(lesson.id);
+  } catch (error) {
+    console.log("No lesson ID");
+    alert("Please select a lesson to delete");
+    return;
   }
+}
 
   async function printLesson() {
+    try {
     const lesson = lessons[selectedLessonIndex];
     console.log("Printing lesson: ", lesson);
     const openInNewTab = url => {
       window.open(url, '_blank', 'noopener,noreferrer');
     };
+
     const url = "/print/" + lesson.id;
     openInNewTab(url);
+    } catch (error) {
+      console.log("No lesson ID");
+      alert("Please select a lesson to print");
+      return;
+    } 
   }
+  
     
 
 
