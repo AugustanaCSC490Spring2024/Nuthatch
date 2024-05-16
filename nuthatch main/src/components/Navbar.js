@@ -8,7 +8,7 @@ function Navbar() {
   return (
     
         <nav>
-            <h3 className="title-text">Gymnastics</h3>
+            <h1 className="title-text">Gymnastics</h1>
             <div class="nav-links">
                 <ul class="nav-menu">
                     <li class="nav-item">

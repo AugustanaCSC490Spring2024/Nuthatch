@@ -18,7 +18,7 @@ function Contact(props){
 
     return (
         <div className = "formBox">
-        <h1>Contact Us</h1>
+        <h1 class="TitleText">Contact Us</h1>
         <form onSubmit={handleSubmit}>
             <div class="name">
             <label>Enter your name:
