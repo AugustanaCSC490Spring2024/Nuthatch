@@ -11,7 +11,7 @@
       --black: #000;
   }
 
-.grid-container{
+.print-grid-container{
     background-color: var(--White);
 }
 

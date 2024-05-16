@@ -50,7 +50,7 @@ const Print = (props) => {
   }, [props.isSignedIn, props.drillLibrary, lessonID]);
 
   return (
-    <div class= 'grid-container'>
+    <div class= 'print-grid-container'>
         <div className='text-container'>
             <h1 class="lessonTitle">{currentLesson.title}</h1>
             <h2>Description</h2>
