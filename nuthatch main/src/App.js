@@ -59,9 +59,9 @@ function App() {
                   {   header: true,
                       worker: true,
                       complete: async (results) => {
-                        console.log("Parsing complete:", results);
+                        // console.log("Parsing complete:", results);
                         const updatedData = await addFullFilePaths(results.data);
-                        console.log("After adding full file paths:",updatedData);
+                        // console.log("After adding full file paths:",updatedData);
                         setCSVData(updatedData);
                         setListOfDrills(updatedData);
                         // create_cards(csvData);
