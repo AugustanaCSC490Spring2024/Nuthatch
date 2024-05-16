@@ -22,11 +22,12 @@ function Contact(props){
         <form onSubmit={handleSubmit}>
             <div class="name">
             <label>Enter your name:
-            <input
+            <input 
                 type="text"
                 name="client_name"
                 value= {input.client_name || ""}
                 onChange={handleChange}
+                placeholder="Enter your name here"
             />
             </label>
             </div>
@@ -37,6 +38,7 @@ function Contact(props){
                     name="client_email"
                     value={input.client_email || ""}
                     onChange={handleChange}
+                    placeholder="Enter your email here"
                 />
             </label>
             </div>
@@ -47,10 +49,11 @@ function Contact(props){
                     name="client_feedback"
                     value={input.client_feedback || ""}
                     onChange={handleChange}
+                    placeholder="Enter your comment here"
                 />
             </label>
             </div>
-            <input type= "submit"/>
+            <input class= "btn1" type= "submit"/>
         </form>
         </div>
     )
