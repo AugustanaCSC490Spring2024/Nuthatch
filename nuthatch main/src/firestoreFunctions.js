@@ -41,6 +41,7 @@ export async function getLessonsFromFirestore() {
   //console.log(JSON.stringify(querySnapshot));
   const allUserLessons = querySnapshot.docs.map((doc) => 
     ({id: doc.id, ...doc.data()}));
+  allUserLessons.sort((a, b) => a.title.localeCompare(b.title));
   
   return allUserLessons;
 }

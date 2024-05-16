@@ -8,7 +8,7 @@ import { auth } from "../firebase";
 
 const LessonsView = (props) => { 
   const [lessons, setLessons] = useState([]);
-  const [selectedLessonIndex, setSelectedLessonIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
   
   async function fetchLessons() {
     // Load lessons from firstore
@@ -25,10 +25,10 @@ async function editLesson() {
   try {
   // console.log("Lesson index: ", selectedLessonIndex);
   // console.log("Lesson: ", lessons);
-  const lesson = lessons[selectedLessonIndex];
-  console.log("Editing lesson: ", lesson);
+  const lessonID = selectedOption.value;
+  console.log("Editing lesson: ", lessonID);
 
-  const url = "/search/" + lesson.id;
+  const url = "/search/" + lessonID;
   window.location.assign(url);
   } catch (error) {
     console.log("No lesson ID");
@@ -42,10 +42,17 @@ async function deleteLesson() {
   try {
     // console.log("Lesson index: ", selectedLessonIndex);
     // console.log("Lesson: ", lessons);
-    const lesson = lessons[selectedLessonIndex];
-    console.log("Deleting lesson: ", lesson);
-    await deleteLessonFromFirestore(lesson.id);
-    window.location.reload();                                                                      //works but not ideal
+    const lessonID = selectedOption.value;
+    // console.log("Deleting lesson: ", lesson);
+    await deleteLessonFromFirestore(lessonID);
+    const newLessons = lessons.filter((item) => item.id !== lessonID); 
+    setLessons(newLessons);
+    const newSelectedOption = { value: newLessons[0].id, label: newLessons[0].title}
+    setSelectedOption(newSelectedOption);
+    
+    console.log("Options[0]: ", options[0])
+
+    // window.location.reload();                                                                      //works but not ideal
   } catch (error) {
     console.log("No lesson ID");
     alert("Please select a lesson to delete");
@@ -56,13 +63,13 @@ async function deleteLesson() {
 
   async function printLesson() {
     try {
-    const lesson = lessons[selectedLessonIndex];
-    console.log("Printing lesson: ", lesson);
+    const lessonID = selectedOption.value;
+    console.log("Printing lesson: ", lessonID);
     const openInNewTab = url => {
       window.open(url, '_blank', 'noopener,noreferrer');
     };
 
-    const url = "/print/" + lesson.id;
+    const url = "/print/" + lessonID;
     openInNewTab(url);
     } catch (error) {
       console.log("No lesson ID");
@@ -80,8 +87,8 @@ async function deleteLesson() {
     }
   }, [props.isSignedIn]);
 
-  const options = lessons.map((lesson, index) => {
-    return { value: index, label: lesson.title };
+ const options = lessons.map((lesson, index) => {
+    return { value: lesson.id, label: lesson.title };
   });
   console.log("OPTIONS:", options);
 
@@ -92,8 +99,8 @@ async function deleteLesson() {
         <button class="btn1" onClick={printLesson}>Print</button>
         <button class="btn2" onClick={deleteLesson}>Delete Lesson</button>
          <div class= "dropDown">
-        <Select  defaultValue={selectedLessonIndex}
-                onChange={({value, label}) => setSelectedLessonIndex(value)}
+        <Select  value={selectedOption}
+                onChange={setSelectedOption}
                 options={options}  
         />
          </div>
