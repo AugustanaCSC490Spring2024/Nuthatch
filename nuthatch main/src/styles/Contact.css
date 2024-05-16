@@ -16,6 +16,15 @@
   padding: 0;
 }
 
+.contact-container{
+  font-family: var(--second-font-family);
+  color: var(--White);
+}
+
+.contact-heading{
+  color: var(--SGBUS-green)
+}
+/* 
 input[type="text"]{
     font-size:18px;
     font-family: var(--primary-font-family);
@@ -26,5 +35,5 @@ label{
   font-size: 24px;
   font-family: var(--primary-font-family);
   color: var(--White);
-}
+} */
 
