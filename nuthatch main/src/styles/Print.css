@@ -1,0 +1,37 @@
+:root{
+    --Federal-blue: #00004d;
+      --Imperial-red: #f5424a;
+      --Green-blue: #2169ac;
+      --White-smoke: #f5f5f5;
+      --Light-sky-blue: #89ccff;
+      --SGBUS-green: #73d957;
+      --White: #fff;
+      --primary-font-family: "Assistant", sans-serif;
+      --second-font-family: "Lato", sans-serif;
+      --black: #000;
+  }
+
+.grid-container{
+    background-color: var(--White);
+}
+
+.text-container{
+    box-sizing: border-box; 
+    border: 3px solid  var(--black); 
+    color: var(--black)
+}
+
+.event-title{
+    font-family: var(--second-font-family);
+    color: var(--black);
+    font-size: 24px;
+    box-sizing: border-box;
+    border: 3px solid var(--black);
+    border-radius: 15px;
+}
+
+.drill-cards{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+}

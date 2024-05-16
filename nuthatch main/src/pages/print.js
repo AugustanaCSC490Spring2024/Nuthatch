@@ -59,7 +59,7 @@ const Print = (props) => {
         <div className="drill-cards">
         {[...eventToCardListMap.keys()].map(event => (
             <div>
-                <h3>Event: {event}</h3>
+                <h3 class="event-title">Event: {event}</h3>
                 {eventToCardListMap.get(event).map(card => (
                     <PrintDrillCardView cardItem={card} />
                 ))}
