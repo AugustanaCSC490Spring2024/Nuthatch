@@ -49,10 +49,8 @@ async function deleteLesson() {
     setLessons(newLessons);
     const newSelectedOption = { value: newLessons[0].id, label: newLessons[0].title}
     setSelectedOption(newSelectedOption);
-    
-    console.log("Options[0]: ", options[0])
+    // console.log("Options[0]: ", options[0])
 
-    // window.location.reload();                                                                      //works but not ideal
   } catch (error) {
     console.log("No lesson ID");
     alert("Please select a lesson to delete");

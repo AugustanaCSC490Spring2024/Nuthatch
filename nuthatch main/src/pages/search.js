@@ -14,22 +14,22 @@ const Search = (props) => {
 
   const addCardToLesson = function (cardCode) {
     if (currentLesson.drillCodes.includes(cardCode)) {
-      console.log("Card already exists in current lesson");
+      // console.log("Card already exists in current lesson");
     } else {
-      console.log("Adding card to lesson: " + cardCode);
+      // console.log("Adding card to lesson: " + cardCode);
       const newDrillCodes = [...currentLesson.drillCodes, cardCode];
       const newLesson = {...currentLesson, drillCodes:newDrillCodes}
-      console.log(JSON.stringify(newLesson));
+      // console.log(JSON.stringify(newLesson));
       setCurrentLesson(newLesson);
       saveLessonToFirestore(lessonID, newLesson)
     }
   }
 
   const removeCardFromLesson = function (cardCode) {
-    console.log("Removing card from lesson: " + cardCode);
+    // console.log("Removing card from lesson: " + cardCode);
     const newDrillCodes = currentLesson.drillCodes.filter(code => code!== cardCode);
     const newLesson = {...currentLesson, drillCodes:newDrillCodes}
-    console.log(JSON.stringify(newLesson));
+    // console.log(JSON.stringify(newLesson));
     setCurrentLesson(newLesson);
     saveLessonToFirestore(lessonID, newLesson)
   }
@@ -52,12 +52,12 @@ const Search = (props) => {
     // Load lesson from firestore
     async function fetchLesson() {
       const theLesson = await getLessonFromFirestoreByID(lessonID);
-      console.log("Lesson with ID: ", lessonID, " = ", JSON.stringify(theLesson));
+      // console.log("Lesson with ID: ", lessonID, " = ", JSON.stringify(theLesson));
       
       setCurrentLesson(theLesson);
     };
     if (lessonID && auth.currentUser) {
-      console.log("about to fetch lesson")
+      // console.log("about to fetch lesson")
       fetchLesson();
     }
   }, [props.isSignedIn, lessonID]);
