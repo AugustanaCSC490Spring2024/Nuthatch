@@ -37,6 +37,7 @@ async function editLesson() {
   }
 }
 
+
 async function deleteLesson() {
   try {
     // console.log("Lesson index: ", selectedLessonIndex);
@@ -44,11 +45,13 @@ async function deleteLesson() {
     const lesson = lessons[selectedLessonIndex];
     console.log("Deleting lesson: ", lesson);
     await deleteLessonFromFirestore(lesson.id);
+    window.location.reload();     //works but not ideal
   } catch (error) {
     console.log("No lesson ID");
     alert("Please select a lesson to delete");
     return;
   }
+
 }
 
   async function printLesson() {
