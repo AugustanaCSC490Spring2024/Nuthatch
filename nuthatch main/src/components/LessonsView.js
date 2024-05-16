@@ -26,12 +26,12 @@ async function editLesson() {
   // console.log("Lesson index: ", selectedLessonIndex);
   // console.log("Lesson: ", lessons);
   const lessonID = selectedOption.value;
-  console.log("Editing lesson: ", lessonID);
+  // console.log("Editing lesson: ", lessonID);
 
   const url = "/search/" + lessonID;
   window.location.assign(url);
   } catch (error) {
-    console.log("No lesson ID");
+    // console.log("No lesson ID");
     alert("Please select a lesson to edit");
     return;
   }
@@ -52,7 +52,7 @@ async function deleteLesson() {
     // console.log("Options[0]: ", options[0])
 
   } catch (error) {
-    console.log("No lesson ID");
+    // console.log("No lesson ID");
     alert("Please select a lesson to delete");
     return;
   }
@@ -62,7 +62,7 @@ async function deleteLesson() {
   async function printLesson() {
     try {
     const lessonID = selectedOption.value;
-    console.log("Printing lesson: ", lessonID);
+    // console.log("Printing lesson: ", lessonID);
     const openInNewTab = url => {
       window.open(url, '_blank', 'noopener,noreferrer');
     };
@@ -70,7 +70,7 @@ async function deleteLesson() {
     const url = "/print/" + lessonID;
     openInNewTab(url);
     } catch (error) {
-      console.log("No lesson ID");
+      // console.log("No lesson ID");
       alert("Please select a lesson to print");
       return;
     } 
@@ -88,7 +88,7 @@ async function deleteLesson() {
  const options = lessons.map((lesson, index) => {
     return { value: lesson.id, label: lesson.title };
   });
-  console.log("OPTIONS:", options);
+  // console.log("OPTIONS:", options);
 
   return (
     <div class= 'container'>
