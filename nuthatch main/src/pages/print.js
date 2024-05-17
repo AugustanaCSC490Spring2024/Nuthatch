@@ -17,15 +17,16 @@ const Print = (props) => {
   useEffect(() => {
     // Load lesson from firestore
     async function fetchLesson() {
-        try{
+        // try{
         const theLesson = await getLessonFromFirestoreByID(lessonID);
         setCurrentLesson(theLesson);
         //group the cards (or IDs really) that are in the lesson by their event
 
         const groupCardsByEvent = () => {
             const eventMap = new Map();
-            theLesson.drillCodes.forEach(async (drillCode) => {
-                const cardItem = getCardByCode(drillCode);
+            theLesson.drillCodes.forEach((drillCode) => {
+                console.log("drillCode:", drillCode);
+                const cardItem = getCardByCode(props.drillLibrary, drillCode);
                 const event = cardItem.Event;
                 console.log(cardItem.Event);
                 if (!eventMap.has(event)) {
@@ -38,11 +39,11 @@ const Print = (props) => {
             setEventToCardListMap(eventMap);
         };
     
-
         groupCardsByEvent();
-        } catch (error) {
-            alert("No lesson Data")
-        }
+        // } catch (error) {
+        //     console.log("error: " + error);
+        //     //alert("error: " + error);
+        // }
     };
     if (lessonID && auth.currentUser && props.drillLibrary) {
       fetchLesson();

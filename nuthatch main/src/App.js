@@ -16,7 +16,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { auth } from './firebase.js';
 import { usePapaParse } from 'react-papaparse';
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
-import { setListOfDrills } from './drillDB.js';
 import { onAuthStateChanged } from 'firebase/auth';
 
 
@@ -35,7 +34,7 @@ async function addFullFilePaths(data) {
   }
 
 function App() {
-  const [csvData, setCSVData] = useState([]);
+  const [csvData, setCSVData] = useState(null);
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   const { readString } = usePapaParse();
@@ -61,9 +60,8 @@ function App() {
                       complete: async (results) => {
                         // console.log("Parsing complete:", results);
                         const updatedData = await addFullFilePaths(results.data);
-                        // console.log("After adding full file paths:",updatedData);
+                        console.log("After adding full file paths:",updatedData);
                         setCSVData(updatedData);
-                        setListOfDrills(updatedData);
                         // create_cards(csvData);
                       }
                   });

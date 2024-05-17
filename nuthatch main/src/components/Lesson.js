@@ -33,7 +33,7 @@ const Lesson = (props) => {
             </div>
             <div className="drill-cards">
                 {props.lesson.drillCodes.map(drillCode => (
-                    <DrillCardView cardItem={getCardByCode(drillCode)} removeCardFromLesson = {props.removeCardFromLesson} />
+                    <DrillCardView cardItem={getCardByCode(props.drillLibrary, drillCode)} removeCardFromLesson = {props.removeCardFromLesson} />
                 ))} 
             </div>  
         </div>

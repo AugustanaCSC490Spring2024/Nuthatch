@@ -27,7 +27,7 @@ const SearchComponent = (props) => {
 
     const filterData = (searchTerm) => {
 
-      const fData = getCardsBySearch(searchTerm);
+      const fData = getCardsBySearch(props.drillLibrary, searchTerm);
     setFilteredData(fData);
     };
 

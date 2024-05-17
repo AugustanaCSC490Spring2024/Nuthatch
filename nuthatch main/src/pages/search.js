@@ -67,7 +67,7 @@ const Search = (props) => {
       {/* <h1>LESSON ID: {lessonID}</h1> */}
     <div class='lesson-editor'>
       <div class="search-component"><SearchComponent drillLibrary={props.drillLibrary} addCardToLessonFunction={addCardToLesson}/> </div>
-      <div class="lesson-component"> <Lesson lesson = {currentLesson} removeCardFromLesson={removeCardFromLesson} setTitleHandler={setTitleHandler} setDescriptionHandler={setDescriptionHandler} /> </div>
+      <div class="lesson-component"> <Lesson drillLibrary={props.drillLibrary} lesson={currentLesson} removeCardFromLesson={removeCardFromLesson} setTitleHandler={setTitleHandler} setDescriptionHandler={setDescriptionHandler} /> </div>
     </div>
     {/* DEBUG <div> <p style={{'color':'white'}}>{JSON.stringify(currentLesson)}</p> </div> */}
     </div>
