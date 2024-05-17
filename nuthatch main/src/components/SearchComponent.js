@@ -6,13 +6,19 @@ import { useState } from 'react';
 import DrillCardView from './DrillCardView';
 import { getCardsBySearch } from '../drillDB';
 
+const CARD_DISPLAY_LIMIT = 100;
+
 const SearchComponent = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState([]);
     const [isImageView, setisImageView] = useState(true);
 
     useEffect(() => { 
-      setFilteredData(props.drillLibrary);
+      if (props.drillLibrary.length > CARD_DISPLAY_LIMIT) {
+        setFilteredData(props.drillLibrary.slice(0, CARD_DISPLAY_LIMIT));
+      } else {
+       setFilteredData(props.drillLibrary);
+      }
     }, [props.drillLibrary]);
     
     const handleChange = () => {
@@ -28,7 +34,11 @@ const SearchComponent = (props) => {
     const filterData = (searchTerm) => {
 
       const fData = getCardsBySearch(props.drillLibrary, searchTerm);
-      setFilteredData(fData);
+      if (fData.length > CARD_DISPLAY_LIMIT) {
+        setFilteredData(fData.slice(0, CARD_DISPLAY_LIMIT));
+      } else {
+        setFilteredData(fData);
+      }
     };
 
   return (
