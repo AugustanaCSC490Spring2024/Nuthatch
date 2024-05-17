@@ -13,10 +13,11 @@ import WithNav from './components/WithNav.js';
 import WithoutNav from './components/WithoutNav.js';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { auth } from './firebase.js';
+import { auth, db} from './firebase.js';
 import { usePapaParse } from 'react-papaparse';
 import { getStorage, ref, getDownloadURL, getBlob } from "firebase/storage";
 import { onAuthStateChanged } from 'firebase/auth';
+import { collection, query, where, getDocs  } from 'firebase/firestore';
 
 
 async function addFullFilePaths(data) {
@@ -36,6 +37,7 @@ async function addFullFilePaths(data) {
 function App() {
   const [csvData, setCSVData] = useState(null);
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [subscription, setSubscription] = useState(null);
 
   const { readString } = usePapaParse();
 
@@ -60,7 +62,7 @@ function App() {
                       complete: async (results) => {
                         // console.log("Parsing complete:", results);
                         const updatedData = await addFullFilePaths(results.data);
-                        console.log("After adding full file paths:",updatedData);
+                        // console.log("After adding full file paths:",updatedData);
                         setCSVData(updatedData);
                         // create_cards(csvData);
                       }
@@ -69,10 +71,31 @@ function App() {
     fetchData();
   }, []);
   
+  useEffect(() => {
+    // get subscription from Stripe in firebase
+    const getActiveSubscription = async (currentUser) => {
+
+      const subscriptionsRef = collection(db, 'customers', currentUser.uid, 'subscriptions');
+      const activeSubsQuery = query(subscriptionsRef, where('status', 'in', ['trialing', 'active']));
   
+      
+      const querySnapshot = await getDocs(activeSubsQuery);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        // setSubscription to the name hidden inside of this doc.data()
+      });    
+    };
+
+    if (auth.currentUser) {
+      getActiveSubscription(auth.currentUser);
+   } else {
+      setSubscription(null);
+   }
+  }, [isSignedIn, auth.currentUser]);
 
   return (
-    <section class="header">
+    <section className="header">
     <div className="App">
       <Router>
         <Routes>

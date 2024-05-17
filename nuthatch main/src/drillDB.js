@@ -2,8 +2,8 @@ import { json } from "react-router-dom";
 
 
 const getCardByCode = function (listOfDrills, cardCode ) {;
-    console.log(JSON.stringify(listOfDrills));
-    console.log("getting card for cardCode: ", cardCode);
+    // console.log(JSON.stringify(listOfDrills));
+    // console.log("getting card for cardCode: ", cardCode);
     return listOfDrills.find(card => card.CODE === cardCode);
 }
 

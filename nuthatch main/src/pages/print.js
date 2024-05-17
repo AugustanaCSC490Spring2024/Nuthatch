@@ -17,7 +17,6 @@ const Print = (props) => {
   useEffect(() => {
     // Load lesson from firestore
     async function fetchLesson() {
-        // try{
         const theLesson = await getLessonFromFirestoreByID(lessonID);
         setCurrentLesson(theLesson);
         //group the cards (or IDs really) that are in the lesson by their event
@@ -25,10 +24,10 @@ const Print = (props) => {
         const groupCardsByEvent = () => {
             const eventMap = new Map();
             theLesson.drillCodes.forEach((drillCode) => {
-                console.log("drillCode:", drillCode);
+                // console.log("drillCode:", drillCode);
                 const cardItem = getCardByCode(props.drillLibrary, drillCode);
                 const event = cardItem.Event;
-                console.log(cardItem.Event);
+                // console.log(cardItem.Event);
                 if (!eventMap.has(event)) {
                     eventMap.set(event, []);
                 }
@@ -40,10 +39,6 @@ const Print = (props) => {
         };
     
         groupCardsByEvent();
-        // } catch (error) {
-        //     console.log("error: " + error);
-        //     //alert("error: " + error);
-        // }
     };
     if (lessonID && auth.currentUser && props.drillLibrary) {
       fetchLesson();
@@ -51,18 +46,18 @@ const Print = (props) => {
   }, [props.isSignedIn, props.drillLibrary, lessonID]);
 
   return (
-    <div class= 'print-grid-container'>
+    <div className= 'print-grid-container'>
         <div className='text-container'>
-            <h1 class="lessonTitle">{currentLesson.title}</h1>
+            <h1 className="lessonTitle">{currentLesson.title}</h1>
             <h2>Description</h2>
             <p>{currentLesson.description}</p>
         </div>
         <div className="drill-cards">
         {[...eventToCardListMap.keys()].map(event => (
-            <div>
-                <h3 class="event-title">Event: {event}</h3>
+            <div key={event}>
+                <h3 className="event-title">Event: {event}</h3>
                 {eventToCardListMap.get(event).map(card => (
-                    <PrintDrillCardView cardItem={card} />
+                    <PrintDrillCardView key={card.CODE} cardItem={card} />
                 ))}
             </div>))}
             {/* {currentLesson.drillCodes.map(drillCode => (
