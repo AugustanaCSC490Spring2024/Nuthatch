@@ -56,11 +56,11 @@ const Search = (props) => {
       
       setCurrentLesson(theLesson);
     };
-    if (lessonID && auth.currentUser) {
+    if (lessonID && auth.currentUser && props.drillLibrary && props.drillLibrary.length > 0) {
       // console.log("about to fetch lesson")
       fetchLesson();
     }
-  }, [props.isSignedIn, lessonID]);
+  }, [props.isSignedIn, lessonID, props.drillLibrary]);
 
   return (
     <div class= 'grid-container'>

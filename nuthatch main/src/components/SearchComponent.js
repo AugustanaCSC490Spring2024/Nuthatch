@@ -28,7 +28,7 @@ const SearchComponent = (props) => {
     const filterData = (searchTerm) => {
 
       const fData = getCardsBySearch(props.drillLibrary, searchTerm);
-    setFilteredData(fData);
+      setFilteredData(fData);
     };
 
   return (
@@ -49,7 +49,7 @@ const SearchComponent = (props) => {
             <div className='cardContainer'>
               {filteredData.map(drillInfo => {
                 return (
-                  <DrillCardView cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
+                  <DrillCardView key={drillInfo.CODE} cardItem={drillInfo} addCardToLessonFunction={props.addCardToLessonFunction}/>
                 );
               })}
               </div>

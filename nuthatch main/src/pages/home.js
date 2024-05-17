@@ -36,6 +36,7 @@ function Home(props){
 
                 </div>
                     <p>{auth.currentUser ? "Signed in as " + auth.currentUser.email : "Not signed in"} </p>
+                    <p>{props.subscriptionName ? "Subscription plan: " + props.subscriptionName : "No Subscription"}</p>
             </div>
             <div class="image">
                 <img src={gymnast} alt="gymnastics dancer"></img>

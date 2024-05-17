@@ -21,12 +21,16 @@ import { collection, query, where, getDocs  } from 'firebase/firestore';
 
 
 async function addFullFilePaths(data) {
-
+  data = data.filter((item) => item.CODE != "");
   const newData = data.map(async (item) => {
-      const fullImageReference = ref(getStorage(), item['Pack Folder'] + '/full/' + item.Image);
+      console.log("item: ", item);
+      const fullImagePath = item['Pack Folder'] + '/full/' + item.Image;
+      console.log("fullImagePath: ", fullImagePath);
+      const fullImageReference = ref(getStorage(), fullImagePath);
       const imageURL = await getDownloadURL(fullImageReference);
       item.fullImageURL = imageURL;
-      const thumbnailReference = ref(getStorage(), item['Pack Folder'] + '/thumbs/' + item.Image.replace('.png', '.jpg'));
+      const thumbnailPath = item['Pack Folder'] + '/thumbs/' + item.Image.replace('.png', '.jpg');
+      const thumbnailReference = ref(getStorage(), thumbnailPath);
       const thumbnailURL = await getDownloadURL(thumbnailReference);
       item.thumbnailURL = thumbnailURL;
       return item;
@@ -35,9 +39,9 @@ async function addFullFilePaths(data) {
   }
 
 function App() {
-  const [csvData, setCSVData] = useState(null);
+  const [csvData, setCSVData] = useState([]);
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [subscription, setSubscription] = useState(null);
+  const [subscriptionName, setSubscriptionName] = useState(null);
 
   const { readString } = usePapaParse();
 
@@ -53,7 +57,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => { 
 
-      const pathReference = ref(getStorage(), 'Demo1/Demo1.csv');
+      const filePath = subscriptionName + "/" + subscriptionName + ".csv";
+      const pathReference = ref(getStorage(), filePath);
       const blob = await getBlob(pathReference);
       const csvText = await blob.text();
       readString(csvText, 
@@ -68,8 +73,10 @@ function App() {
                       }
                   });
     }
-    fetchData();
-  }, []);
+    if (subscriptionName) {
+      fetchData();
+    }
+  }, [subscriptionName]);
   
   useEffect(() => {
     // get subscription from Stripe in firebase
@@ -78,19 +85,19 @@ function App() {
       const subscriptionsRef = collection(db, 'customers', currentUser.uid, 'subscriptions');
       const activeSubsQuery = query(subscriptionsRef, where('status', 'in', ['trialing', 'active']));
   
-      
       const querySnapshot = await getDocs(activeSubsQuery);
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-        // setSubscription to the name hidden inside of this doc.data()
+        const subscriptionName = doc.data().items[0].price.product.name;
+        setSubscriptionName(subscriptionName);        
       });    
     };
 
     if (auth.currentUser) {
       getActiveSubscription(auth.currentUser);
    } else {
-      setSubscription(null);
+      setSubscriptionName(null);
    }
   }, [isSignedIn, auth.currentUser]);
 
@@ -100,7 +107,7 @@ function App() {
       <Router>
         <Routes>
         <Route element={<WithNav />}>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home subscriptionName={subscriptionName}/>} />
           <Route path="/signin" element={<SignIn /> } />
           <Route path="/signup" element={<SignUp />} />
           <Route path='/programinput' element={<ProgramInput />} />

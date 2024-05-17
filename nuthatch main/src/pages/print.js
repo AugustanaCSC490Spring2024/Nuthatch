@@ -40,7 +40,7 @@ const Print = (props) => {
     
         groupCardsByEvent();
     };
-    if (lessonID && auth.currentUser && props.drillLibrary) {
+    if (lessonID && auth.currentUser && props.drillLibrary && props.drillLibrary.length > 0) {
       fetchLesson();
     }
   }, [props.isSignedIn, props.drillLibrary, lessonID]);
