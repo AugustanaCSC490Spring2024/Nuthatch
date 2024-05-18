@@ -31,8 +31,16 @@ const DrillCardView = (props) => {
 								transition={{ duration: 1}}
 								className= "expand"
 						>
+				{/* this is anything in the excel sheet */}
+				{/* <h3>Code: {cardItem.CODE}</h3> */}
+				{/* <h3>Title: {cardItem.Title}</h3> */}
 				<h3>Event: {cardItem.Event}</h3>
-				<h3>Category: {cardItem.Category}</h3>  
+				{/* <h3>Category: {cardItem.Category}</h3> */}
+				<h3>Gender: {cardItem.Gender}</h3>
+				<h3>Level: {cardItem.Level}</h3>
+				<h3>Equipment: {cardItem.Equipment}</h3>
+
+
 						</motion.div>
 						)}
 						<div className="btn-container">
