@@ -15,7 +15,7 @@ const Lesson = (props) => {
             {/* <p>ID: {JSON.stringify(lessonID)}</p> */}
             <div className='text-container'>
                 
-                <h1 class="lessonTitle">{props.lesson.title}</h1>
+                <h1 className="lessonTitle">{props.lesson.title}</h1>
                 <input 
                 placeholder="Change Title"
                 value={props.lesson.title}
@@ -28,8 +28,6 @@ const Lesson = (props) => {
                 placeholder="Change Description"
                 onChange={(e) => { props.setDescriptionHandler(e.target.value);}} 
                 ></input>
-                {/* no longer needed */}
-                {/* <button class="btn1" onClick={() => saveLessonToFirestore(lessonID, props.lesson)}>Save Lesson</button> */}
             </div>
             <div className="drill-cards">
                 {props.lesson.drillCodes.map(drillCode => (

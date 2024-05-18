@@ -23,9 +23,9 @@ import { collection, query, where, getDocs  } from 'firebase/firestore';
 async function addFullFilePaths(data) {
   data = data.filter((item) => item.CODE != "");
   const newData = data.map(async (item) => {
-      console.log("item: ", item);
+      // console.log("item: ", item);
       const fullImagePath = item['Pack Folder'] + '/full/' + item.Image;
-      console.log("fullImagePath: ", fullImagePath);
+      // console.log("fullImagePath: ", fullImagePath);
       const fullImageReference = ref(getStorage(), fullImagePath);
       const imageURL = await getDownloadURL(fullImageReference);
       item.fullImageURL = imageURL;
@@ -88,7 +88,7 @@ function App() {
       const querySnapshot = await getDocs(activeSubsQuery);
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
         const subscriptionName = doc.data().items[0].price.product.name;
         setSubscriptionName(subscriptionName);        
       });    

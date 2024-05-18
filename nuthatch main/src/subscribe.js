@@ -17,7 +17,7 @@ async function fetchProducts() {
 
 
 async function subscribeFree() { 
-    try {
+    try { 
       // console.log("db",db)
       // console.log("id", auth.currentUser.uid)
       const docRef = await addDoc(collection(db, "customers", auth.currentUser.uid, "checkout_sessions"), {

@@ -64,7 +64,7 @@ const SearchComponent = (props) => {
               })}
               </div>
               ) : (
-                <ul class = "TextViewList">
+                <ul className = "TextViewList">
                 {filteredData.map(item => (
                   <li key={item.CODE}><button className="btn3" onClick={() => props.addCardToLessonFunction(item.CODE)}>Add</button> {item.CODE}: {item.Title}  </li>
                 ))}

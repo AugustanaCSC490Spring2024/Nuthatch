@@ -30,7 +30,7 @@ export const auth = getAuth(app);
 export const signOut = () => {
     auth.signOut().then(() => {
         window.location.href = '/';
-        console.log('Sign-out successful');
+        // console.log('Sign-out successful');
     }).catch((error) => {
         console.error('Sign-out error:', error.message);
     });

@@ -6,8 +6,8 @@ import frostyVid from '../Images/frosty vid.png'
 function About(props){
     return (
         
-        <div class="container">
-            <div class="text-box">
+        <div className="container">
+            <div className="text-box">
                 <h1>About GymProf</h1>
                 <p>Thank you so much for stopping in to see the gymnastics curriculum products I have developed. While I have named the business "The Gymnastics Professor," the name is a little misleading. I am a professor and I do coach gymnastics, but I am not a professor of gymnastics.
 
@@ -21,7 +21,7 @@ function About(props){
                 <p>Special thanks to Forrest Stonedahl</p>
             </div>
 
-            <div class="image">
+            <div className="image">
                 <img src={frostyVid} alt="Video Placeholder"></img>
             </div>
         </div>

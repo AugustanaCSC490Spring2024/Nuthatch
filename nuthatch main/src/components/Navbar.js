@@ -9,33 +9,28 @@ function Navbar() {
     
         <nav>
             <h1 className="title-text">Gymnastics</h1>
-            <div class="nav-links">
-                <ul class="nav-menu">
-                    <li class="nav-item">
+            <div className="nav-links">
+                <ul className="nav-menu">
+                    <li className="nav-item">
                       <NavLink to="/">HOME</NavLink>
                     </li>
-                    {/* {auth.currentUser && (
-                      <li class="nav-item">
-                        <NavLink to="/search">SEARCH</NavLink>
-                      </li> 
-                    )} */}
                     {auth.currentUser && (
-                      <li class="nav-item">
+                      <li className="nav-item">
                         <NavLink to="/lessonsview">LESSONS</NavLink>
                       </li>
                     )}
-                    <li class="nav-item">
+                    <li className="nav-item">
                       <NavLink to="/about">ABOUT</NavLink>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                       <NavLink to="/contact">CONTACT</NavLink>
                     </li>                  
                 </ul>
             </div>
                 <div className = "hamburger">
-                    <span class ='bar'> </span>
-                    <span class ='bar'> </span>
-                    <span class ='bar'> </span>
+                    <span className ='bar'> </span>
+                    <span className ='bar'> </span>
+                    <span className ='bar'> </span>
                 </div>
         </nav>
   );
