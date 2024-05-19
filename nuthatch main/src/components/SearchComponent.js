@@ -51,7 +51,7 @@ const SearchComponent = (props) => {
         onChange={handleInputChange}
       />
       </div>
-      <button onClick={handleChange} className={`toggle-button ${isImageView ? 'image' : 'text'}`}>
+      <button onClick={handleChange} className={`toggle-button ${isImageView ? 'Image' : 'text'}`}>
         {isImageView ? 'Image' : 'Text'}
       </button>
       <div className= 'gridContainer'>
