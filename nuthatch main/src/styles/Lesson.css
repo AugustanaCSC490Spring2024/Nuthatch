@@ -10,6 +10,14 @@
     --second-font-family: "Lato", sans-serif;
 }
 
+.container-Lesson{
+    justify-content: center;
+}
+
+.select-dropdown{
+    margin: 10px 0px;
+}
+
 .lessonTitle{
     padding-top: 20px;
     font-family: var(--second-font-family);
