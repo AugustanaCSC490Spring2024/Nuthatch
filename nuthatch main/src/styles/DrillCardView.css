@@ -11,15 +11,15 @@
     --second-font-family: "Lato", sans-serif;
 }
 
-@media screen and (min-width: 1610px) {
+@media screen and (max-width: 1610px) {
     h2{
-        font-size: 2rem;
+        font-size: 3rem;
     }
   }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
     h2{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 
