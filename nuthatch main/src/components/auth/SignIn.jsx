@@ -45,7 +45,7 @@ function SignIn(){
                         onChange={(e) => setPassword(e.target.value)}/>
                     </div> 
                 </div>   
-                <div className='sign_forgot-password'>Lost Password? <span>Click here</span></div>
+                {/* <div className='sign_forgot-password'>Lost Password? <span>Click here</span></div> */}
                 <div className='sign_submit-container'>
                     <button type="submit" className="sign_submit">Log In</button>
                 </div> 
