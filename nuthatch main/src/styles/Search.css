@@ -57,7 +57,7 @@
   /* This column will automatically take the third column due to grid layout */
 }
   
-.todo-container {
+/* .todo-container {
   display: flex;
   justify-content: center;
   align-items: center;    
@@ -66,7 +66,7 @@
 .todo {
   width: 70%;
   margin: 3rem auto 0 auto;    
-}
+} */
 
 .header {
   font-size: 2.5rem;
