@@ -11,6 +11,18 @@
     --black: #000;
 }
 
+.image{
+  flex: 1;
+  text-align: center;
+}
+
+@media screen and (max-width: 1020px) {
+  .image{
+    display: none;
+  }
+  
+}
+
 input {
   padding: 10px 25px;
   margin-left: 10px;
