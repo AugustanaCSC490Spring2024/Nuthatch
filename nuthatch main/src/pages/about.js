@@ -1,5 +1,5 @@
 import React from "react";
-import frostyVid from '../Images/frosty vid.png'
+import logo from "../Images/gymProfLogo.png";
 
 
 
@@ -22,7 +22,7 @@ function About(props){
             </div>
 
             <div className="image">
-                <img src={frostyVid} alt="Video Placeholder"></img>
+                <img src={logo} alt="logo"></img>
             </div>
         </div>
     )
