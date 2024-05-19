@@ -96,15 +96,14 @@ async function deleteLesson() {
         <button className="btn1" onClick={editLesson}>Edit Lesson</button>
         <button className="btn1" onClick={printLesson}>Print</button>
         <button className="btn2" onClick={deleteLesson}>Delete Lesson</button>
-         <div className= "dropDown">
-        <Select className="select-dropdown"
-                value={selectedOption}
-                onChange={setSelectedOption}
-                options={options}  
-                placeholder="Select Lesson"
-                
-        />
-         </div>
+        <div className= "dropDown">
+          <Select 
+            value={selectedOption}
+            onChange={setSelectedOption}
+            options={options}  
+            placeholder="Select Lesson"      
+          />
+        </div>
 
     </div>
   );

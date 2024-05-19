@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import gymnast from "../Images/gymnast.png";
+import logo from "../Images/gymProfLogo.png";
 import "../styles/Home.css";
 import { subscribeFree, subscribeMain, subscribePremiumTier } from "../subscribe.js";
 import { auth, signOut } from "../firebase.js"
@@ -39,7 +40,8 @@ function Home(props){
                     <p>{props.subscriptionName ? "Subscription plan: " + props.subscriptionName : "No Subscription"}</p>
             </div>
             <div className="image">
-                <img src={gymnast} alt="gymnastics dancer"></img>
+                <img src={logo} alt="logo"></img>
+                {/* <img src={gymnast} alt="gymnastics dancer"></img> */}
             </div>
         </div>
     );
