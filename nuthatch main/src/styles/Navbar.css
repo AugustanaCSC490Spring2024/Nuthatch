@@ -7,15 +7,13 @@
   --SGBUS-green: #73d957;
   --White: #fff;
   --black-color: #121619;
+  --primary-font-family: "Assistant", sans-serif;
+  --second-font-family: "Lato", sans-serif;
 }
 
-/**Code from app.css moved here, refactor this code*/
 nav{
   background-color: var(--Federal-blue);
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
   min-height: 70px;
-  font-style: normal;
   display: flex;
   padding-left: 15px;
   justify-content: space-between;
@@ -24,7 +22,7 @@ nav{
   font-size: 24px;
 }
 .nav-links{
-  font-family: "Old Standard TT", serif; 
+  font-family: var(--primary-font-family);
   font-weight: 400;
   font-style: normal;
   flex: 1;
@@ -75,136 +73,3 @@ nav{
   margin: 0;
 }
 
-/*https://www.youtube.com/watch?v=flItyHiDm7E&ab_channel=WebDevTutorials*/
-@media(max-width:768px){
-  .hamburger{
-      display: block;
-  }
-  .hamburger.active .bar:nth-child(2){
-      opacity:0;
-  }
-  .hamburger.active .bar:nth-child(1){
-      transform: translateY(8px)rotate(45deg);
-  }
-  .hamburger.active .bar:nth-child(3){
-      transform: translateY(-8px)rotate(-45deg);
-  }
-  .nav-menu{
-      position:fixed;
-      left: -100%;
-      top: 70px;
-      gap: 0;
-      flex-direction: column;
-      background-color: var(--Federal-blue);
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-  }
-  .nav-menu.active{
-      left:0;
-  }
-}
-
-
-.navbar {
-  width: 100%;
-  height: 100px;
-  background-color: var(--black-color);
-  display: flex;
-  flex-direction: row;
-}
-
-.navbar .leftSide {
-  flex: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 150px;
-}
-
-.navbar .leftSide img {
-  width: 70px;
-}
-
-.navbar .rightSide {
-  flex: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar a {
-  color: var(--White);
-  text-decoration: none;
-  margin: 20px;
-}
-
-.navbar .rightSide button {
-  background-color: transparent;
-  border: none;
-  color: var(--White);
-  cursor: pointer;
-}
-
-.navbar .rightSide svg {
-  font-size: 40px;
-}
-
-.navbar #open {
-  padding-left: 0px;
-}
-.navbar #open img {
-  display: none;
-}
-
-.navbar #close img {
-  display: inherit;
-}
-
-.navbar #open .hiddenLinks {
-  display: inherit;
-  margin-left: 30px;
-}
-
-.navbar #close .hiddenLinks {
-  display: none;
-}
-
-.navbar #open a {
-  width: 70px;
-  margin: 5px;
-}
-@media only screen and (max-width: 900px) {
-  .navbar .rightSide a {
-    width: 70px;
-  }
-  .navbar .leftSide {
-    padding-left: 50px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .navbar .rightSide a {
-    display: none;
-  }
-
-  .navbar .rightSide {
-    justify-content: flex-end;
-    padding-right: 50px;
-  }
-
-  .navbar .rightSide button {
-    display: inherit;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .navbar .rightSide button {
-    display: none;
-  }
-
-  .hiddenLinks {
-    display: none;
-  }
-}
