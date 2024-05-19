@@ -12,15 +12,19 @@
 }
 
 @media screen and (max-width: 1610px) {
-    h2{
+    .card-head{
         font-size: 3rem;
     }
   }
 
 @media screen and (min-width: 600px) {
-    h2{
+    .card-head{
         font-size: 1.5rem;
     }
+}
+
+.card-text{
+    font-size: 1.5rem;
 }
 
 .cards{
