@@ -10,12 +10,6 @@
     --second-font-family: "Lato", sans-serif;
 }
 
-/* *{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
-
 .contact-container{
   font-family: var(--second-font-family);
   color: var(--White);
