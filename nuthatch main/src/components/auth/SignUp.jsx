@@ -32,12 +32,12 @@ function SignUp(){
                 </div>
                 <div className='sign_inputs'>
                     <div className="sign_input">
-                        <img src={email_icon} alt = ""/>
+                        <img src={email_icon} alt = "Email Icon" className="SignInImages"/>
                         <input type="email" placeholder="Email"
                         onChange={(e) => setEmail(e.target.value)}/>
                     </div>  
                     <div className="sign_input">
-                        <img src={password_icon} alt = ""/>
+                        <img src={password_icon} alt = "Lock icon" className="SignInImages"/>
                         <input type="password" placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}/>
                     </div> 
