@@ -11,6 +11,10 @@
     --second-font-family: "Lato", sans-serif;
 }
 
+h2{
+    font-size: 2rem;
+}
+
 .cards{
     color: var(--Federal-blue);
     background: var(--White);
