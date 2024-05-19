@@ -6,7 +6,7 @@ import { useState } from 'react';
 import DrillCardView from './DrillCardView';
 import { getCardsBySearch } from '../drillDB';
 
-const CARD_DISPLAY_LIMIT = 100;
+const CARD_DISPLAY_LIMIT = 50;
 
 const SearchComponent = (props) => {
     const [searchTerm, setSearchTerm] = useState('');

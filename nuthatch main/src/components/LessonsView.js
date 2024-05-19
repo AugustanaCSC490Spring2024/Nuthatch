@@ -100,7 +100,7 @@ async function deleteLesson() {
         <Select  value={selectedOption}
                 onChange={setSelectedOption}
                 options={options}  
-                placeholder="Select Lesson Here"
+                placeholder="Select Lesson"
                 
         />
          </div>
