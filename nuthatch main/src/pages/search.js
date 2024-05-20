@@ -10,7 +10,7 @@ import {getLessonFromFirestoreByID, saveLessonToFirestore} from '../firestoreFun
 import {auth} from '../firebase';
 
 const Search = (props) => {
-  const [currentLesson, setCurrentLesson] = useState({'title': 'Untitled Lesson', 'description':"not done yet", 'drillCodes':[]});
+  const [currentLesson, setCurrentLesson] = useState({'title': 'Untitled Lesson', 'description' : "No Description", 'drillCodes':[]});
 
   const addCardToLesson = function (cardCode) {
     if (currentLesson.drillCodes.includes(cardCode)) {

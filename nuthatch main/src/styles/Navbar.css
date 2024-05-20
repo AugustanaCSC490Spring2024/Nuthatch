@@ -51,11 +51,6 @@ nav{
   width: 100%;
 }
 
-.hamburger{
-  display: none;
-  cursor: pointer;
-}
-
 .bar{
   display: block;
   width: 25px;
